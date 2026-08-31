@@ -133,6 +133,8 @@ h1, h2, h3 { margin: 4px 0 0; letter-spacing: -0.02em; }
 }
 .tip-btn.disabled span { color: var(--muted); }
 .tip-other { font-size: 13px; }
+.crypto-row { margin: 10px 0 0; }
+.crypto-row code { word-break: break-all; }
 .tip-copy {
   border: 1px solid var(--line);
   background: transparent;

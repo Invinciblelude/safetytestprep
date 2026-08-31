@@ -20,6 +20,7 @@ window.SUPPORT_CONFIG = {
   if (p.cryptoUrl) c.cryptoUrl = p.cryptoUrl;
   if (p.cryptoAddress) c.cryptoAddress = p.cryptoAddress;
   if (p.cryptoLabel) c.cryptoLabel = p.cryptoLabel;
+  if (p.crypto) c.crypto = p.crypto;
 })();
 
 (function () {
@@ -47,7 +48,7 @@ window.SUPPORT_CONFIG = {
 
   function hasPay() {
     const c = window.SUPPORT_CONFIG || {};
-    return Boolean(cashappBase() || c.cryptoUrl || c.cryptoAddress);
+    return Boolean(cashappBase() || c.cryptoUrl || c.cryptoAddress || (c.crypto && c.crypto.length));
   }
 
   function render(el, variant) {
@@ -79,25 +80,8 @@ window.SUPPORT_CONFIG = {
       })
       .join("");
 
-    const bits = [];
-    if (c.cryptoUrl) {
-      bits.push(
-        "<a href='" +
-          c.cryptoUrl +
-          "' target='_blank' rel='noopener'>Send crypto</a>"
-      );
-    }
-    if (c.cryptoAddress) {
-      bits.push(
-        "<button type='button' class='tip-copy' data-copy='" +
-          String(c.cryptoAddress).replace(/'/g, "") +
-          "'>Copy " +
-          (c.cryptoLabel || "crypto") +
-          " address</button>"
-      );
-    }
-    const other = bits.length
-      ? "<p class='tip-other'>Crypto: " + bits.join(" · ") + ". Cash App can also receive bitcoin to the same $cashtag.</p>"
+    const other = typeof stpCryptoHtml === "function" && stpCryptoHtml()
+      ? "<div class='tip-other'><p>Cash App: $safetytestprep. Or copy a crypto address. USDT must be TRX / Tron.</p>" + stpCryptoHtml() + "</div>"
       : "<p class='tip-other'>Tip with Cash App ($5 / $9 / $19) or crypto. Not PayPal. The tests stay free.</p>";
 
     const lead =
@@ -119,15 +103,18 @@ window.SUPPORT_CONFIG = {
       other +
       (live ? "" : "<p class='tip-other'>Optional Cash App study support is not enabled yet. The quizzes stay free.</p>");
 
-    el.querySelectorAll(".tip-copy").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        const addr = btn.getAttribute("data-copy") || "";
-        if (!addr || !navigator.clipboard) return;
-        navigator.clipboard.writeText(addr).then(function () {
-          btn.textContent = "Copied";
+    if (typeof stpBindCopy === "function") stpBindCopy(el);
+    else {
+      el.querySelectorAll(".tip-copy").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          const addr = btn.getAttribute("data-copy") || "";
+          if (!addr || !navigator.clipboard) return;
+          navigator.clipboard.writeText(addr).then(function () {
+            btn.textContent = "Copied";
+          });
         });
       });
-    });
+    }
   }
 
   window.renderSupport = render;
