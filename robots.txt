@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://invinciblelude.github.io/safetytestprep/sitemap.xml
+Sitemap: https://safetytestprep.com/sitemap.xml

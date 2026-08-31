@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free California Class A CDL Practice Test</title>
+  <meta name="description" content="Free California Class A CDL practice tests: General Knowledge, Air Brakes, Combination Vehicles, endorsements, and pre-trip. Not official DMV questions." />
+  <link rel="canonical" href="https://safetytestprep.com/cdl/" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow"><a href="../index.html">Safety Test Prep</a> · California Class A</p>
+        <h1>CDL Practice Lab</h1>
+      </div>
+      <p class="disclaimer">Original practice items modeled on the California Commercial Driver Handbook. Not official DMV questions.</p>
+    </header>
+
+    <nav class="tabs" id="tabs" hidden>
+      <button type="button" data-view="home">Home</button>
+      <button type="button" data-view="quiz">Quiz</button>
+      <button type="button" data-view="flashcards">Flashcards</button>
+      <button type="button" data-view="bank">Question bank</button>
+    </nav>
+
+    <main id="screen-home" class="screen">
+      <section class="hero">
+        <h2>Study for the California Class A permit</h2>
+        <p>Required written tests: General Knowledge (50), Air Brakes (25), Combination Vehicles (20). Pass each at 80%. The banks are larger than the real tests so each attempt draws a new mix. Optional endorsements are in the 7-category mock. This is study help, not the DMV. <a href="study-help.html">How to advertise this legally</a>.</p>
+      </section>
+
+      <section class="support" id="support-home"></section>
+
+      <section class="grid">
+        <button class="card start" data-mode="mock">
+          <span class="kicker">Simulator</span>
+          <strong>50-question mock exam</strong>
+          <span>All 7 categories: General Knowledge, Air Brakes, Combination, Doubles/Triples, Tanker, HazMat, Passenger. 80% to pass.</span>
+        </button>
+        <button class="card start" data-mode="general">
+          <span class="kicker">Class A core</span>
+          <strong>General Knowledge · 50</strong>
+          <span>Safe driving, space, cargo, emergencies, inspections, California commercial rules. 40 correct to pass.</span>
+        </button>
+        <button class="card start" data-mode="airBrakes">
+          <span class="kicker">Class A core</span>
+          <strong>Air Brakes · 25</strong>
+          <span>System parts, pressures, leak tests, spring brakes, ABS, inspections. 20 correct to pass.</span>
+        </button>
+        <button class="card start" data-mode="combination">
+          <span class="kicker">Class A core</span>
+          <strong>Combination Vehicles · 20</strong>
+          <span>Fifth wheel, coupling, air lines, off-tracking, rollovers, jackknife. 16 correct to pass.</span>
+        </button>
+        <button class="card start" data-mode="pretrip">
+          <span class="kicker">Skills prep</span>
+          <strong>Pre-Trip Inspection · 20</strong>
+          <span>Engine, steering, suspension, brakes, coupling, in-cab air-brake tests.</span>
+        </button>
+        <button class="card start" data-mode="flashcards">
+          <span class="kicker">Drill</span>
+          <strong>110 flashcards</strong>
+          <span>Air brake numbers and coupling/uncoupling steps. Flip, mark known, shuffle.</span>
+        </button>
+      </section>
+
+      <section class="grid compact">
+        <button class="card start slim" data-mode="doubles"><strong>Doubles / Triples</strong><span>T endorsement</span></button>
+        <button class="card start slim" data-mode="tanker"><strong>Tank Vehicles</strong><span>N endorsement</span></button>
+        <button class="card start slim" data-mode="hazmat"><strong>Hazardous Materials</strong><span>H endorsement</span></button>
+        <button class="card start slim" data-mode="passenger"><strong>Passenger</strong><span>P endorsement</span></button>
+        <button class="card start slim" data-mode="generalAll"><strong>GK full bank</strong><span>Every general-knowledge item</span></button>
+        <button class="card start slim" data-mode="airAll"><strong>Air Brakes full bank</strong><span>Every air-brake item</span></button>
+        <button class="card start slim" data-mode="comboAll"><strong>Combination full bank</strong><span>Every combination item</span></button>
+        <button class="card start slim" data-mode="pretripAll"><strong>Pre-Trip full bank</strong><span>Every inspection item</span></button>
+        <button class="card start slim" data-mode="bank"><strong>Browse all questions</strong><span>Full bank with answers</span></button>
+      </section>
+
+      <section class="study-order">
+        <h3>Best free study order</h3>
+        <ol>
+          <li>Read California CDL handbook sections for General Knowledge, Air Brakes, and Combination Vehicles.</li>
+          <li>Take the subject tests here until you consistently score 90% or higher.</li>
+          <li>Write down every missed topic, not just the missed question.</li>
+          <li>Drill the 50-question mock and the flashcards before permit day.</li>
+        </ol>
+        <p>Official sources: <a href="https://www.dmv.ca.gov/portal/handbook/commercial-driver-handbook/" target="_blank" rel="noopener">California Commercial Driver Handbook</a> and <a href="https://www.dmv.ca.gov/portal/driver-education-and-safety/educational-materials/sample-driver-license-dl-knowledge-tests/sample-commercial-drivers-written-test-1/" target="_blank" rel="noopener">DMV Sample Commercial Test 1</a>.</p>
+      </section>
+    </main>
+
+    <main id="screen-quiz" class="screen" hidden>
+      <div class="quiz-bar">
+        <div>
+          <p class="eyebrow" id="quiz-title">Quiz</p>
+          <p id="quiz-progress">Question 1</p>
+        </div>
+        <div class="meter"><span id="quiz-meter"></span></div>
+      </div>
+      <article class="question-card">
+        <p class="topic" id="quiz-topic"></p>
+        <h2 id="quiz-prompt"></h2>
+        <div id="quiz-choices" class="choices"></div>
+        <p class="explain" id="quiz-explain" hidden></p>
+        <div class="actions">
+          <button type="button" id="btn-next" hidden>Next</button>
+          <button type="button" id="btn-quit" class="ghost">Quit</button>
+        </div>
+      </article>
+    </main>
+
+    <main id="screen-result" class="screen" hidden>
+      <article class="result-card">
+        <p class="eyebrow" id="result-kicker">Result</p>
+        <h2 id="result-score"></h2>
+        <p id="result-detail"></p>
+        <div class="actions">
+          <button type="button" id="btn-retry">Retake</button>
+          <button type="button" id="btn-review" class="ghost">Review missed</button>
+          <button type="button" id="btn-home" class="ghost">Home</button>
+        </div>
+        <div class="support compact" id="support-result"></div>
+        <ol id="missed-list" class="missed"></ol>
+      </article>
+    </main>
+
+    <main id="screen-flash" class="screen" hidden>
+      <div class="quiz-bar">
+        <div>
+          <p class="eyebrow">Flashcards</p>
+          <p id="flash-progress">1 / 110</p>
+        </div>
+        <div class="flash-filters">
+          <button type="button" data-deck="all" class="chip active">All</button>
+          <button type="button" data-deck="air-brakes" class="chip">Air Brakes</button>
+          <button type="button" data-deck="coupling" class="chip">Coupling</button>
+          <button type="button" data-deck="unknown" class="chip">Still learning</button>
+        </div>
+      </div>
+      <button type="button" class="flip-card" id="flip-card" aria-label="Flip card">
+        <span class="topic" id="flash-topic"></span>
+        <strong id="flash-text"></strong>
+        <em id="flash-hint">Tap to reveal</em>
+      </button>
+      <div class="actions">
+        <button type="button" id="btn-unknown" class="ghost">Still learning</button>
+        <button type="button" id="btn-known">Got it</button>
+        <button type="button" id="btn-flash-next" class="ghost">Skip</button>
+      </div>
+    </main>
+
+    <main id="screen-bank" class="screen" hidden>
+      <div class="quiz-bar">
+        <div>
+          <p class="eyebrow">Full question bank</p>
+          <h2>All practice items</h2>
+        </div>
+        <select id="bank-filter"></select>
+      </div>
+      <div id="bank-list" class="bank-list"></div>
+    </main>
+  </div>
+  <script src="js/questions.js"></script>
+  <script src="js/questions-set2.js"></script>
+  <script src="js/flashcards.js"></script>
+  <script src="../js/config.js"></script>
+  <script src="js/support.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
