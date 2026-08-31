@@ -1,15 +1,17 @@
-(function () {
+function stpCashBase() {
   const cfg = window.STP_PAY || {};
-  function cashBase() {
-    let s = String(cfg.cashapp || "").trim();
-    if (!s) return "";
-    if (s.indexOf("http") !== 0) {
-      if (s.charAt(0) !== "$") s = "$" + s;
-      s = "https://cash.app/" + s;
-    }
-    return s.replace(/\/$/, "");
+  let s = String(cfg.cashapp || "").trim();
+  if (!s) return "";
+  if (s.indexOf("http") !== 0) {
+    if (s.charAt(0) !== "$") s = "$" + s;
+    s = "https://cash.app/" + s;
   }
-  const base = cashBase();
+  return s.replace(/\/$/, "");
+}
+
+function stpWirePay() {
+  const cfg = window.STP_PAY || {};
+  const base = stpCashBase();
   document.querySelectorAll("[data-cash]").forEach(function (a) {
     const amt = a.getAttribute("data-cash");
     if (!base) {
@@ -18,6 +20,8 @@
       return;
     }
     a.href = base + "/" + amt;
+    a.target = "_blank";
+    a.rel = "noopener";
   });
   const warn = document.getElementById("pay-warn");
   if (warn) warn.hidden = Boolean(base);
@@ -28,4 +32,6 @@
     if (cfg.cryptoAddress) bits.push((cfg.cryptoLabel || "BTC") + ": " + cfg.cryptoAddress);
     crypto.innerHTML = bits.length ? bits.join(" · ") : "";
   }
-})();
+}
+
+document.addEventListener("DOMContentLoaded", stpWirePay);
