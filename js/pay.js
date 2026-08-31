@@ -25,6 +25,16 @@ function stpWirePay() {
   });
   const warn = document.getElementById("pay-warn");
   if (warn) warn.hidden = Boolean(base);
+  const cashLine = document.getElementById("cash-line");
+  if (cashLine) {
+    let tag = String(cfg.cashapp || "").trim();
+    if (base && tag && tag.indexOf("http") !== 0) {
+      if (tag.charAt(0) !== "$") tag = "$" + tag;
+      cashLine.textContent = "Cash App: " + tag;
+    } else {
+      cashLine.textContent = "";
+    }
+  }
   const crypto = document.getElementById("crypto-line");
   if (crypto) {
     const bits = [];

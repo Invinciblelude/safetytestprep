@@ -43,7 +43,7 @@ window.QUIZ_MODES = {
   marathon: { title: "100-Question Marathon", size: 100, pass: 70, categories: ["intro", "focusFour", "fallProtection", "ladders", "excavation", "electrical", "ppe", "hazcom", "loto", "materials", "health", "fire", "walking", "confined", "forklift", "hazwoper", "bloodborne", "welding", "steel", "concrete", "respiratory", "machineguard", "aerial", "demolition", "recordkeeping", "firstaid", "psm", "tools", "stairways", "sanitation", "signs", "vehicles", "ergonomics"] },
   intro: { title: "Introduction to OSHA", size: 20, pass: 14, categories: ["intro"] },
   focusFour: { title: "Focus Four Hazards", size: 15, pass: 11, categories: ["focusFour"] },
-  fallProtection: { title: "Fall Protection", size: 20, pass: 14, categories: ["fallProtection"] },
+  fallProtection: { title: "Fall Protection Practice Quiz", size: 15, pass: 11, categories: ["fallProtection"] },
   ladders: { title: "Ladders & Scaffolds", size: 18, pass: 13, categories: ["ladders"] },
   excavation: { title: "Excavation & Trenching", size: 18, pass: 13, categories: ["excavation"] },
   electrical: { title: "Electrical Safety", size: 18, pass: 13, categories: ["electrical"] },
