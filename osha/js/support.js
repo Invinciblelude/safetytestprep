@@ -118,7 +118,7 @@ window.SUPPORT_CONFIG = {
       amountHtml +
       "</div>" +
       other +
-      (live ? "" : "<p class='tip-other'>Until a Cash App $cashtag or crypto address is in js/support.js, use the tests as-is.</p>");
+      (live ? "" : "<p class='tip-other'>Optional Cash App study support is not enabled yet. The quizzes stay free.</p>");
 
     el.querySelectorAll(".tip-copy").forEach(function (btn) {
       btn.addEventListener("click", function () {

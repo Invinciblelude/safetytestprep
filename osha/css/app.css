@@ -153,6 +153,14 @@ select { max-width: 100%; }
   max-width: 720px;
 }
 .legal-foot p { margin: 0 0 8px; }
+.edu-bar {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0 0 18px;
+  max-width: 720px;
+}
+.sources { color: var(--muted); font-size: 14px; }
+.sources a { color: var(--amber); }
 @media (max-width: 700px) {
   .topbar, .quiz-bar { flex-direction: column; align-items: flex-start; }
   .disclaimer { max-width: none; }
