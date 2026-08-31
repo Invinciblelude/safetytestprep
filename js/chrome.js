@@ -33,7 +33,8 @@
       '<p class="foot-links">' +
       '<a href="' + b + 'privacy.html">Privacy</a> · ' +
       '<a href="' + b + 'terms.html">Terms</a> · ' +
-      '<a href="' + b + 'disclaimer.html">Disclaimer</a></p>' +
+      '<a href="' + b + 'disclaimer.html">Disclaimer</a> · ' +
+      '<a href="' + b + 'support.html">Keep the labs free — optional support</a></p>' +
       "<p>© 2026 Safety Test Prep. Independent educational practice only. No certifications, cards, licenses, or government credentials are issued. Not affiliated with or endorsed by OSHA, the U.S. Department of Labor, the California DMV, the American Heart Association, the American Red Cross, or any government agency.</p>";
   }
 

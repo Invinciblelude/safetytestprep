@@ -12,7 +12,7 @@
   <div class="app">
     <header class="topbar">
       <div>
-        <p class="eyebrow"><a href="../index.html">Safety Test Prep</a> · <a href="../about.html">About</a> · OSHA 10 / 30</p>
+        <p class="eyebrow"><a href="../index.html">Safety Test Prep</a> / OSHA</p>
         <h1>OSHA Practice Lab</h1>
       </div>
       <p class="disclaimer">OSHA-topic study quizzes. Not official DOL questions. A 10- or 30-hour card can only be issued by an authorized Outreach trainer.</p>
@@ -29,11 +29,16 @@
     <main id="screen-home" class="screen">
       <section class="hero">
         <h2>OSHA-topic practice quizzes</h2>
-        <p>808 original multiple-choice items across 33 topics, plus 143 flashcards. Designed to support study of common construction and general industry safety concepts before an authorized Outreach course. Outreach written checks are often scored around 70%. This does not replace an authorized trainer or issue a DOL card. Last reviewed August 31, 2026. <a href="study-help.html">How this lab is allowed to exist</a> · <a href="../contact.html">See an error? Tell us.</a></p>
-        <p class="sources">Official source: <a href="https://www.osha.gov/training/outreach" rel="noopener noreferrer" target="_blank">OSHA Outreach Training Program</a>.</p>
+        <p>Review common construction and general-industry safety concepts with original multiple-choice questions and flashcards.</p>
+        <p class="metrics">808 practice questions · 143 flashcards · 33 topics<br>Last reviewed: August 31, 2026</p>
+        <p class="lab-cta">
+          <button type="button" class="start-main start" data-mode="quick10">Start a 10-Question Quiz</button>
+          <button type="button" class="start-side start" data-mode="flashcards">Flashcards</button>
+          <button type="button" class="start-side start" data-mode="bank">Browse Question Bank</button>
+        </p>
+        <p class="howto">Start with 10 randomized questions, review each explanation, and continue when ready.</p>
+        <p>Independent educational practice only. This lab is not OSHA Outreach training, does not issue a completion card, and does not guarantee an exam result. For current Outreach information, visit the <a href="https://www.osha.gov/training/outreach" rel="noopener noreferrer" target="_blank">official OSHA Outreach Training Program</a>.</p>
       </section>
-
-      <section class="support" id="support-home"></section>
 
       <section class="grid">
         <button class="card start" data-mode="osha10">
@@ -119,8 +124,10 @@
           <li>Add LOTO, HazCom, health hazards, and confined spaces for OSHA 30 depth.</li>
           <li>Take the 25- and 50-question mocks, then review every missed item in the question bank.</li>
         </ol>
-        <p>Official sources: <a href="https://www.osha.gov/training/outreach" target="_blank" rel="noopener">OSHA Outreach Training</a>, <a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926" target="_blank" rel="noopener">29 CFR 1926 (Construction)</a>, and <a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1910" target="_blank" rel="noopener">29 CFR 1910 (General Industry)</a>.</p>
+        <p>Official sources: <a href="https://www.osha.gov/training/outreach" target="_blank" rel="noopener">OSHA Outreach Training</a>, <a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926" target="_blank" rel="noopener">29 CFR 1926 (Construction)</a>, and <a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1910" target="_blank" rel="noopener">29 CFR 1910 (General Industry)</a>. Last reviewed August 31, 2026. <a href="../contact.html">See an error? Tell us.</a></p>
       </section>
+
+      <section class="support quiet" id="support-home"></section>
     </main>
 
     <main id="screen-quiz" class="screen" hidden>
@@ -151,10 +158,11 @@
         <div class="actions">
           <button type="button" id="btn-retry">Retake</button>
           <button type="button" id="btn-review" class="ghost">Review missed</button>
+          <button type="button" id="btn-quick10" class="ghost">Try another 10-question quiz</button>
           <button type="button" id="btn-home" class="ghost">Home</button>
         </div>
-        <div class="support compact" id="support-result"></div>
         <ol id="missed-list" class="missed"></ol>
+        <div class="support compact" id="support-result"></div>
       </article>
     </main>
 
@@ -197,7 +205,7 @@
     </main>
     <footer data-stp-footer data-base="../"></footer>
   </div>
-  <script src="js/questions.js?v=20260831"></script>
+  <script src="js/questions.js?v=20260831b"></script>
   <script src="js/questions-set2.js"></script>
   <script src="js/questions-set3.js"></script>
   <script src="js/questions-set4.js"></script>
@@ -206,7 +214,7 @@
   <script src="../js/config.js"></script>
   <script src="../js/pay.js"></script>
   <script src="js/support.js"></script>
-  <script src="js/app.js?v=20260831"></script>
+  <script src="js/app.js?v=20260831d"></script>
   <script src="../js/chrome.js"></script>
 </body>
 </html>

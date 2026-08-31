@@ -1,4 +1,10 @@
 window.QUIZ_MODES = {
+  quick10: {
+    title: "10-Question Practice Mix",
+    size: 10,
+    pass: 8,
+    mix: { chain: 2, adultCpr: 4, aed: 3, choking: 1 }
+  },
   heartsaver: {
     title: "Heartsaver CPR AED Mock",
     size: 25,

@@ -104,6 +104,33 @@ select { max-width: 100%; }
   padding: 18px 22px;
   margin: 0 0 16px;
 }
+.support.quiet {
+  margin-top: 28px;
+  background: transparent;
+  box-shadow: none;
+}
+.lab-cta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 16px 0 8px; }
+.start-main {
+  background: var(--amber);
+  color: #1a1204;
+  font-weight: 800;
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font: inherit;
+}
+.start-side {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font: inherit;
+}
+.metrics { color: var(--muted); font-size: 15px; margin: 10px 0; }
+.howto { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
 .result-card .support {
   margin: 16px 0 0;
   padding: 16px;
@@ -114,9 +141,9 @@ select { max-width: 100%; }
 .support-amounts { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
 .tip-btn {
   display: inline-flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 2px;
-  min-width: 92px;
+  min-width: 0;
   border: 1px solid var(--amber);
   background: var(--amber);
   color: #1a0406;

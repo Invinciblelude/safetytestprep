@@ -1,35 +1,16 @@
-/**
- * Cash App and crypto only (no PayPal).
- * cashapp: "https://cash.app/$YourTag"  or  "$YourTag"
- * cryptoUrl: Strike / BTCPay / a payment page
- * cryptoAddress: BTC (or other) address to copy
- */
 window.SUPPORT_CONFIG = {
-  product: "this CPR & AED practice lab",
-  cashapp: "",
-  cryptoUrl: "",
-  cryptoAddress: "",
-  cryptoLabel: "BTC"
+  product: "the CPR & AED Practice Lab",
+  credential: "CPR/AED training, a card, certification, medical advice, or priority access",
+  cashapp: ""
 };
 
 (function applyRootPay() {
   var p = window.STP_PAY;
   if (!p) return;
-  var c = window.SUPPORT_CONFIG;
-  if (p.cashapp) c.cashapp = p.cashapp;
-  if (p.cryptoUrl) c.cryptoUrl = p.cryptoUrl;
-  if (p.cryptoAddress) c.cryptoAddress = p.cryptoAddress;
-  if (p.cryptoLabel) c.cryptoLabel = p.cryptoLabel;
-  if (p.crypto) c.crypto = p.crypto;
+  if (p.cashapp) window.SUPPORT_CONFIG.cashapp = p.cashapp;
 })();
 
 (function () {
-  const amounts = [
-    { usd: 5, label: "$5", why: "Coffee" },
-    { usd: 9, label: "$9", why: "A week online" },
-    { usd: 19, label: "$19", why: "Both banks" }
-  ];
-
   function cashappBase() {
     let s = String((window.SUPPORT_CONFIG && window.SUPPORT_CONFIG.cashapp) || "").trim();
     if (!s) return "";
@@ -40,81 +21,51 @@ window.SUPPORT_CONFIG = {
     return s.replace(/\/$/, "");
   }
 
+  function tagLabel() {
+    let s = String((window.SUPPORT_CONFIG && window.SUPPORT_CONFIG.cashapp) || "").trim();
+    if (!s) return "";
+    if (s.indexOf("http") === 0) return "";
+    if (s.charAt(0) !== "$") s = "$" + s;
+    return s;
+  }
+
   function hrefFor(amount) {
     const base = cashappBase();
     if (!base) return "";
     return base + "/" + amount;
   }
 
-  function hasPay() {
-    const c = window.SUPPORT_CONFIG || {};
-    return Boolean(cashappBase() || c.cryptoUrl || c.cryptoAddress || (c.crypto && c.crypto.length));
-  }
-
   function render(el, variant) {
     if (!el) return;
     const c = window.SUPPORT_CONFIG || {};
-    const product = c.product || "this practice lab";
-    const live = hasPay();
-    const amountHtml = amounts
-      .map(function (row) {
-        const href = hrefFor(row.usd);
-        if (href) {
-          return (
-            "<a class='tip-btn' href='" +
-            href +
-            "' target='_blank' rel='noopener'>" +
-            row.label +
-            " <span>" +
-            row.why +
-            "</span></a>"
-          );
-        }
-        return (
-          "<span class='tip-btn disabled' title='Add your Cash App $cashtag in js/support.js'>" +
-          row.label +
-          " <span>" +
-          row.why +
-          "</span></span>"
-        );
-      })
-      .join("");
+    const live = Boolean(cashappBase());
+    const href = hrefFor("9.99") || hrefFor("10");
+    const tag = tagLabel();
+    const btn = href
+      ? "<a class='tip-btn' href='" + href + "' target='_blank' rel='noopener'>Support Safety Test Prep — $9.99 via Cash App</a>"
+      : "<span class='tip-btn disabled'>Support Safety Test Prep — $9.99 via Cash App</span>";
 
-    const other = typeof stpCryptoHtml === "function" && stpCryptoHtml()
-      ? "<div class='tip-other'><p>Cash App: $safetytestprep. Or copy a crypto address. USDT must be TRX / Tron.</p>" + stpCryptoHtml() + "</div>"
-      : "<p class='tip-other'>Tip with Cash App ($5 / $9 / $19) or crypto. Not PayPal. The tests stay free.</p>";
-
-    const lead =
-      variant === "result"
-        ? "If this mock helped, chip in so the next student can study for free."
-        : "The quizzes stay free. A tip keeps the lab online.";
+    if (variant === "home") {
+      el.innerHTML =
+        "<p class='tip-other'><a href='../support.html'>Keep Safety Test Prep free — optional support</a></p>";
+      return;
+    }
 
     el.innerHTML =
-      "<p class='eyebrow'>Support</p>" +
-      "<strong>Leave a tip for " +
-      product +
-      "</strong>" +
-      "<p>" +
-      lead +
-      " Cash App or crypto. This is a thank-you, not a tax-deductible donation, and not payment for a CPR card.</p>" +
+      "<p class='eyebrow'>Keep the lab open</p>" +
+      "<p>I’m Vince. I built Safety Test Prep to make practical safety study tools easier to access for workers, job seekers, and people entering the trades.</p>" +
+      "<p>You used original CPR/AED knowledge-review questions and explanations—without an account or paywall. Safety Test Prep is free to use. If this quiz helped you prepare, optional support of $9.99 helps fund research, question writing, review, and updates.</p>" +
       "<div class='support-amounts'>" +
-      amountHtml +
+      btn +
       "</div>" +
-      other +
-      (live ? "" : "<p class='tip-other'>Optional Cash App study support is not enabled yet. The quizzes stay free.</p>");
-
-    if (typeof stpBindCopy === "function") stpBindCopy(el);
-    else {
-      el.querySelectorAll(".tip-copy").forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          const addr = btn.getAttribute("data-copy") || "";
-          if (!addr || !navigator.clipboard) return;
-          navigator.clipboard.writeText(addr).then(function () {
-            btn.textContent = "Copied";
-          });
-        });
-      });
-    }
+      (tag && href
+        ? "<p class='tip-other'>Cash App: <a href='" + cashappBase() + "' target='_blank' rel='noopener'>" + tag + "</a>. Note: Safety Test Prep support. The account may display as Andy Lau until the display name is updated.</p>"
+        : "") +
+      "<p class='tip-other'>Payment is optional. If you cannot contribute right now, keep studying.</p>" +
+      "<p class='tip-other'>Support does not purchase " +
+      (c.credential || "a credential") +
+      ".</p>" +
+      (live ? "" : "<p class='tip-other'>Cash App is not enabled yet.</p>");
   }
 
   window.renderSupport = render;

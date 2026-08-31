@@ -1,4 +1,10 @@
 window.QUIZ_MODES = {
+  quick10: {
+    title: "10-Question Practice Mix",
+    size: 10,
+    pass: 7,
+    mix: { intro: 2, focusFour: 3, fallProtection: 3, ppe: 2 }
+  },
   osha10: {
     title: "OSHA 10 Construction Mock",
     size: 25,

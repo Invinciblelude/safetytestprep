@@ -1,4 +1,5 @@
 window.QUIZ_MODES = {
+  quick10: { title: "10-Question Practice Mix", size: 10, pass: 8, mix: { general: 4, airBrakes: 3, combination: 3 } },
   mock: { title: "50-Question Mock Exam", size: 50, pass: 40, mix: { general: 10, airBrakes: 10, combination: 8, doubles: 6, tanker: 6, hazmat: 5, passenger: 5 } },
   general: { title: "General Knowledge", size: 50, pass: 40, categories: ["general"] },
   airBrakes: { title: "Air Brakes", size: 25, pass: 20, categories: ["airBrakes"] },

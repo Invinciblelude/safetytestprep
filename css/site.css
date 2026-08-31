@@ -180,7 +180,9 @@ code { font-size: 12px; color: var(--amber); word-break: break-all; }
   padding: 6px 12px;
   color: var(--muted);
   font-size: 13px;
+  text-decoration: none;
 }
+a.tag:hover { border-color: var(--amber); color: var(--amber); }
 .steps {
   display: grid;
   gap: 12px;

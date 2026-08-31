@@ -129,7 +129,8 @@
     const passed = score >= needed;
     document.getElementById("result-kicker").textContent = spec.title;
     document.getElementById("result-score").textContent = score + " / " + queue.length + (passed ? " · Pass" : " · Keep studying");
-    document.getElementById("result-detail").textContent = "You need " + needed + " correct (about 70%). Outreach finals are given by authorized trainers; this set is practice only and does not issue a DOL card.";
+    document.getElementById("result-detail").textContent =
+      "Review the explanations below, then try another quiz or a different topic. This is independent practice only. A 10- or 30-hour card can only be issued by an authorized Outreach trainer.";
     const list = document.getElementById("missed-list");
     list.innerHTML = "";
     missed.forEach((row) => {
@@ -292,6 +293,10 @@
   document.getElementById("btn-next").addEventListener("click", nextQuestion);
   document.getElementById("btn-quit").addEventListener("click", () => show("home"));
   document.getElementById("btn-home").addEventListener("click", () => show("home"));
+  const another = document.getElementById("btn-quick10");
+  if (another) {
+    another.addEventListener("click", () => buildQuiz("quick10"));
+  }
   document.getElementById("btn-retry").addEventListener("click", () => buildQuiz(lastMode));
   document.getElementById("btn-review").addEventListener("click", () => {
     if (!missed.length) return;

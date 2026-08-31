@@ -12,7 +12,7 @@
   <div class="app">
     <header class="topbar">
       <div>
-        <p class="eyebrow"><a href="../index.html">Safety Test Prep</a> · <a href="../about.html">About</a> · CPR / AED</p>
+        <p class="eyebrow"><a href="../index.html">Safety Test Prep</a> / CPR/AED</p>
         <h1>CPR &amp; AED Practice Lab</h1>
       </div>
       <p class="disclaimer">CPR/AED knowledge review modeled on publicly taught BLS and Heartsaver science. Not official AHA or Red Cross questions. A card requires an in-person skills session with an authorized instructor.</p>
@@ -29,11 +29,16 @@
     <main id="screen-home" class="screen">
       <section class="hero">
         <h2>CPR/AED knowledge review</h2>
-        <p>435 original multiple-choice items across 12 topics, plus 115 flashcards. Authorized written exams are often 25 questions at 84% (21 correct). Each mock draws a new mix. This does not replace a skills check or issue a certification card. Last reviewed August 31, 2026. <a href="study-help.html">How this lab is allowed to exist</a> · <a href="../contact.html">See an error? Tell us.</a></p>
-        <p class="sources">Find a real class: <a href="https://cpr.heart.org/" rel="noopener noreferrer" target="_blank">AHA CPR</a> · <a href="https://www.redcross.org/take-a-class" rel="noopener noreferrer" target="_blank">Red Cross</a> (we are not affiliated).</p>
+        <p>Refresh core emergency-response and CPR/AED knowledge with original practice questions and flashcards before a skills class.</p>
+        <p class="metrics">435 practice questions · 115 flashcards · 12 topics<br>Last reviewed: August 31, 2026</p>
+        <p class="lab-cta">
+          <button type="button" class="start-main start" data-mode="quick10">Start a 10-Question Quiz</button>
+          <button type="button" class="start-side start" data-mode="flashcards">Flashcards</button>
+          <button type="button" class="start-side start" data-mode="bank">Browse Question Bank</button>
+        </p>
+        <p class="howto">Start with 10 randomized questions, review each explanation, and continue when ready.</p>
+        <p>Independent educational practice only. This is not medical advice, not a certification course, and does not issue a card. In an emergency, call 911.</p>
       </section>
-
-      <section class="support" id="support-home"></section>
 
       <section class="grid">
         <button class="card start" data-mode="heartsaver">
@@ -141,8 +146,10 @@
           <li>Add team CPR, bag-mask, opioid, and first aid if your course is BLS or Heartsaver First Aid CPR AED.</li>
           <li>Take the 25-question mocks until you consistently score 21 or higher, then review every miss in the bank.</li>
         </ol>
-        <p>Official sources: <a href="https://cpr.heart.org/" target="_blank" rel="noopener">American Heart Association CPR &amp; ECC</a>, <a href="https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines" target="_blank" rel="noopener">AHA CPR &amp; ECC Guidelines</a>, and <a href="https://www.redcross.org/take-a-class/cpr" target="_blank" rel="noopener">American Red Cross CPR</a>. Follow the handbook your instructor issued — this lab is practice, not a substitute for the course.</p>
+        <p>Official sources: <a href="https://cpr.heart.org/" target="_blank" rel="noopener">American Heart Association CPR &amp; ECC</a>, <a href="https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines" target="_blank" rel="noopener">AHA CPR &amp; ECC Guidelines</a>, and <a href="https://www.redcross.org/take-a-class/cpr" target="_blank" rel="noopener">American Red Cross CPR</a>. Follow the handbook your instructor issued — this lab is practice, not a substitute for the course. Last reviewed August 31, 2026. <a href="../contact.html">See an error? Tell us.</a></p>
       </section>
+
+      <section class="support quiet" id="support-home"></section>
     </main>
 
     <main id="screen-quiz" class="screen" hidden>
@@ -175,8 +182,8 @@
           <button type="button" id="btn-review" class="ghost">Review missed</button>
           <button type="button" id="btn-home" class="ghost">Home</button>
         </div>
-        <div class="support compact" id="support-result"></div>
         <ol id="missed-list" class="missed"></ol>
+        <div class="support compact" id="support-result"></div>
       </article>
     </main>
 
