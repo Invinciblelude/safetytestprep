@@ -38,6 +38,48 @@
       "<p>© 2026 Safety Test Prep. Independent educational practice only. No certifications, cards, licenses, or government credentials are issued. Not affiliated with or endorsed by OSHA, the U.S. Department of Labor, the California DMV, the American Heart Association, the American Red Cross, or any government agency.</p>";
   }
 
+  if (!document.querySelector('link[rel="icon"]')) {
+    var icon = document.createElement("link");
+    icon.rel = "icon";
+    icon.type = "image/svg+xml";
+    icon.href = (base || "") + "img/favicon.svg";
+    document.head.appendChild(icon);
+  }
+
+  document.addEventListener("click", function (e) {
+    var share = e.target.closest("[data-stp-share]");
+    if (share) {
+      e.preventDefault();
+      var url = share.getAttribute("data-url") || location.href;
+      var title = share.getAttribute("data-title") || document.title;
+      var text = share.getAttribute("data-text") || "";
+      if (navigator.share) {
+        navigator.share({ title: title, text: text, url: url }).catch(function () {});
+        return;
+      }
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(url).then(function () {
+          share.textContent = "Link copied";
+        });
+      }
+      return;
+    }
+    var copy = e.target.closest("[data-stp-copy]");
+    if (copy) {
+      e.preventDefault();
+      var sel = copy.getAttribute("data-stp-copy");
+      var el = sel ? document.querySelector(sel) : null;
+      var val = el ? (el.value || el.textContent) : "";
+      if (val && navigator.clipboard) {
+        var prev = copy.textContent;
+        navigator.clipboard.writeText(val.trim()).then(function () {
+          copy.textContent = "Copied";
+          setTimeout(function () { copy.textContent = prev; }, 1600);
+        });
+      }
+    }
+  });
+
   var mail = document.getElementById("contact-mail");
   if (mail) {
     var email = (window.STP_SITE && window.STP_SITE.contactEmail) || "hello@safetytestprep.com";

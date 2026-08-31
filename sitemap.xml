@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://safetytestprep.com/</loc></url>
-  <url><loc>https://safetytestprep.com/about.html</loc></url>
+  <url><loc>https://safetytestprep.com/</loc><lastmod>2026-08-31</lastmod></url>
+  <url><loc>https://safetytestprep.com/about.html</loc><lastmod>2026-08-31</lastmod></url>
   <url><loc>https://safetytestprep.com/why.html</loc></url>
   <url><loc>https://safetytestprep.com/contact.html</loc></url>
   <url><loc>https://safetytestprep.com/privacy.html</loc></url>
@@ -11,14 +11,22 @@
   <url><loc>https://safetytestprep.com/copyright.html</loc></url>
   <url><loc>https://safetytestprep.com/legal.html</loc></url>
   <url><loc>https://safetytestprep.com/support.html</loc></url>
-  <url><loc>https://safetytestprep.com/osha-10-practice.html</loc></url>
-  <url><loc>https://safetytestprep.com/california-cdl-practice.html</loc></url>
-  <url><loc>https://safetytestprep.com/cpr-aed-practice.html</loc></url>
-  <url><loc>https://safetytestprep.com/osha/</loc></url>
-  <url><loc>https://safetytestprep.com/osha/fall-protection.html</loc></url>
-  <url><loc>https://safetytestprep.com/osha/ladder-safety.html</loc></url>
-  <url><loc>https://safetytestprep.com/osha/ppe.html</loc></url>
-  <url><loc>https://safetytestprep.com/osha/hazard-communication.html</loc></url>
-  <url><loc>https://safetytestprep.com/cdl/</loc></url>
-  <url><loc>https://safetytestprep.com/cpr/</loc></url>
+  <url><loc>https://safetytestprep.com/osha-10-practice.html</loc><lastmod>2026-08-31</lastmod></url>
+  <url><loc>https://safetytestprep.com/california-cdl-practice.html</loc><lastmod>2026-08-31</lastmod></url>
+  <url><loc>https://safetytestprep.com/cpr-aed-practice.html</loc><lastmod>2026-08-31</lastmod></url>
+  <url><loc>https://safetytestprep.com/osha/</loc><lastmod>2026-08-31</lastmod></url>
+  <url><loc>https://safetytestprep.com/osha/fall-protection.html</loc><lastmod>2026-08-31</lastmod></url>
+  <url><loc>https://safetytestprep.com/osha/ladder-safety.html</loc><lastmod>2026-08-31</lastmod></url>
+  <url><loc>https://safetytestprep.com/osha/ppe.html</loc><lastmod>2026-08-31</lastmod></url>
+  <url><loc>https://safetytestprep.com/osha/hazard-communication.html</loc><lastmod>2026-08-31</lastmod></url>
+  <url><loc>https://safetytestprep.com/osha/focus-four.html</loc><lastmod>2026-08-31</lastmod></url>
+  <url><loc>https://safetytestprep.com/osha/excavation.html</loc><lastmod>2026-08-31</lastmod></url>
+  <url><loc>https://safetytestprep.com/osha/electrical.html</loc><lastmod>2026-08-31</lastmod></url>
+  <url><loc>https://safetytestprep.com/osha/lockout-tagout.html</loc><lastmod>2026-08-31</lastmod></url>
+  <url><loc>https://safetytestprep.com/cdl/</loc><lastmod>2026-08-31</lastmod></url>
+  <url><loc>https://safetytestprep.com/cdl/general-knowledge.html</loc><lastmod>2026-08-31</lastmod></url>
+  <url><loc>https://safetytestprep.com/cdl/air-brakes.html</loc><lastmod>2026-08-31</lastmod></url>
+  <url><loc>https://safetytestprep.com/cpr/</loc><lastmod>2026-08-31</lastmod></url>
+  <url><loc>https://safetytestprep.com/cpr/adult-cpr.html</loc><lastmod>2026-08-31</lastmod></url>
+  <url><loc>https://safetytestprep.com/cpr/aed.html</loc><lastmod>2026-08-31</lastmod></url>
 </urlset>
