@@ -142,6 +142,16 @@ h1, h2, h3 { margin: 4px 0 0; letter-spacing: -0.02em; }
   cursor: pointer;
   font: inherit;
 }
+.legal-foot {
+  margin-top: 36px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+  max-width: 720px;
+}
+.legal-foot p { margin: 0 0 8px; }
 @media (max-width: 700px) {
   .topbar, .quiz-bar { flex-direction: column; align-items: flex-start; }
   .disclaimer { max-width: none; }
