@@ -38,12 +38,12 @@
       return {
         title: "Desbloquee el banco completo — $9.99",
         lead:
-          "Los cuestionarios de muestra siguen gratis. El banco completo, las tarjetas y los simulacros en este laboratorio cuestan $9.99 por 30 días en este dispositivo. Pague con Cash App, Bitcoin o USDT. No es una tarjeta, licencia ni certificación.",
-        pay: "Pagar $9.99 en Cash App",
-        crypto: "O envíe unos $9.99 en Bitcoin, o $9.99 USDT (solo Tron / TRC-20).",
+          "Los cuestionarios de muestra siguen gratis. El banco completo, las tarjetas y los simulacros en este laboratorio cuestan $9.99 por 30 días en este dispositivo. Pague primero con Bitcoin o USDT. También puede usar Cash App en el teléfono. No es una tarjeta, licencia ni certificación.",
+        pay: "Cash App $9.99 (en el teléfono)",
+        crypto: "Envíe unos $9.99 en Bitcoin, o $9.99 USDT (solo Tron / TRC-20). Copie una dirección abajo.",
         paid: "Ya pagué — desbloquear 30 días",
         free: "Seguir con el cuestionario gratis de " + freeLabel(),
-        note: "Cash App $safetytestprep (nombre: Safety Test Prep). El cripto es irreversible: verifique la red. Pulse “Ya pagué” después de enviar.",
+        note: "El cripto es irreversible: verifique la red. Luego pulse “Ya pagué”. Cash App: $safetytestprep (nombre: Safety Test Prep).",
         close: "Volver",
         days: "Acceso completo en este dispositivo hasta "
       };
@@ -51,12 +51,12 @@
     return {
         title: "Unlock the full practice bank — $9.99",
         lead:
-          "Sample quizzes stay free. The full question bank, flashcards, and mock exams in this lab are $9.99 for 30 days on this device. Pay with Cash App, Bitcoin, or USDT. This is not a card, license, or certification.",
-        pay: "Pay $9.99 with Cash App",
-        crypto: "Or send about $9.99 in Bitcoin, or $9.99 USDT (Tron / TRC-20 only).",
+          "Sample quizzes stay free. The full question bank, flashcards, and mock exams in this lab are $9.99 for 30 days on this device. Pay first with Bitcoin or USDT. Cash App on your phone is also listed. This is not a card, license, or certification.",
+        pay: "Cash App $9.99 (on your phone)",
+        crypto: "Send about $9.99 in Bitcoin, or $9.99 USDT (Tron / TRC-20 only). Copy an address below.",
         paid: "I paid — unlock 30 days",
         free: "Keep the free " + freeLabel() + " quiz",
-        note: "Cash App $safetytestprep (name: Safety Test Prep). Crypto is irreversible — check the network. Tap “I paid” after you send.",
+        note: "Crypto is irreversible — check the network. Then tap “I paid.” Cash App: $safetytestprep (name: Safety Test Prep).",
         close: "Back",
         days: "Full access on this device until "
     };
@@ -134,18 +134,18 @@
       "<p>" +
       c.lead +
       "</p>" +
+      cryptoBlock +
       '<p class="stp-paywall-note">' +
       c.note +
       "</p>" +
       '<p class="btns">' +
-      (href
-        ? '<a class="btn" href="' + href + '" target="_blank" rel="noopener">' + c.pay + "</a>"
-        : "") +
-      '<button type="button" class="btn ghost" data-stp-paid>' +
+      '<button type="button" class="btn" data-stp-paid>' +
       c.paid +
       "</button>" +
+      (href
+        ? '<a class="btn ghost" href="' + href + '" target="_blank" rel="noopener">' + c.pay + "</a>"
+        : "") +
       "</p>" +
-      cryptoBlock +
       '<p><a href="' +
       freeHref() +
       '">' +

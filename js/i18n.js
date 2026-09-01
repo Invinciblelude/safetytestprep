@@ -30,7 +30,7 @@
       cprNeed:
         "You need {n} correct (about 84% on AHA written exams). The skills test is given by an authorized instructor; this set is practice only and does not issue a card.",
       unlockCta: "Unlock the full bank — $9.99",
-      supportCash: "Pay $9.99 — Cash App, BTC, or USDT",
+      supportCash: "Pay $9.99 — BTC, USDT, or Cash App",
       supportHome: "Unlock the full labs — $9.99",
       supportEyebrow: "Unlock the full bank",
       supportVince:
@@ -38,7 +38,7 @@
       supportOptional: "Fall protection, CDL General Knowledge, and Adult CPR stay free if you are not ready to pay.",
       supportDoesNot: "Payment does not purchase ",
       supportCashNote:
-        "Cash App: {tag}. Confirm $safetytestprep and the name Safety Test Prep. Bitcoin and USDT (Tron) are also accepted.",
+        "Cash App: {tag}. Confirm $safetytestprep and the name Safety Test Prep. Pay with Bitcoin or USDT first; Cash App on your phone is also listed.",
       supportNotLive: "Cash App is not enabled yet.",
       supportOshaBody:
         "Fall protection is free. The rest of this OSHA lab — mocks, flashcards, and the 808-question bank — is $9.99 for 30 days on this device. Payment does not buy a card.",
@@ -74,7 +74,7 @@
       cprNeed:
         "Necesita {n} correctas (cerca del 84% en los exámenes escritos de AHA). La prueba de destrezas la da un instructor autorizado; este conjunto es solo práctica y no emite una tarjeta.",
       unlockCta: "Desbloquear el banco completo — $9.99",
-      supportCash: "Pagar $9.99 — Cash App, BTC o USDT",
+      supportCash: "Pagar $9.99 — BTC, USDT o Cash App",
       supportHome: "Desbloquear los laboratorios — $9.99",
       supportEyebrow: "Desbloquear el banco completo",
       supportVince:
@@ -82,7 +82,7 @@
       supportOptional: "Protección contra caídas, conocimientos generales de CDL y RCP en adultos siguen gratis si no está listo para pagar.",
       supportDoesNot: "El pago no compra ",
       supportCashNote:
-        "Cash App: {tag}. Confirme $safetytestprep y el nombre Safety Test Prep. También se aceptan Bitcoin y USDT (Tron).",
+        "Cash App: {tag}. Confirme $safetytestprep y el nombre Safety Test Prep. Pague primero con Bitcoin o USDT; Cash App en el teléfono también está listado.",
       supportNotLive: "Cash App aún no está activado.",
       supportOshaBody:
         "Protección contra caídas es gratis. El resto de este laboratorio OSHA — simulacros, tarjetas y el banco de 808 preguntas — cuesta $9.99 por 30 días en este dispositivo. El pago no compra una tarjeta.",
