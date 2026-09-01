@@ -38,7 +38,7 @@
       supportOptional: "Fall protection, CDL General Knowledge, and Adult CPR stay free if you are not ready to pay.",
       supportDoesNot: "Payment does not purchase ",
       supportCashNote:
-        "Cash App: {tag}. Confirm $safetytestprep and the name Safety Test Prep. Pay with Bitcoin or USDT first; Cash App on your phone is also listed.",
+        "Cash App: {tag}. Confirm $safetytestprep and the name Safety Test Prep. Send $9.99. Bitcoin and USDT (Tron) are also accepted.",
       supportNotLive: "Cash App is not enabled yet.",
       supportOshaBody:
         "Fall protection is free. The rest of this OSHA lab — mocks, flashcards, and the 808-question bank — is $9.99 for 30 days on this device. Payment does not buy a card.",
@@ -82,7 +82,7 @@
       supportOptional: "Protección contra caídas, conocimientos generales de CDL y RCP en adultos siguen gratis si no está listo para pagar.",
       supportDoesNot: "El pago no compra ",
       supportCashNote:
-        "Cash App: {tag}. Confirme $safetytestprep y el nombre Safety Test Prep. Pague primero con Bitcoin o USDT; Cash App en el teléfono también está listado.",
+        "Cash App: {tag}. Confirme $safetytestprep y el nombre Safety Test Prep. Envíe $9.99. También se aceptan Bitcoin y USDT (Tron).",
       supportNotLive: "Cash App aún no está activado.",
       supportOshaBody:
         "Protección contra caídas es gratis. El resto de este laboratorio OSHA — simulacros, tarjetas y el banco de 808 preguntas — cuesta $9.99 por 30 días en este dispositivo. El pago no compra una tarjeta.",
