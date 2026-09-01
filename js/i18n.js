@@ -30,7 +30,7 @@
       cprNeed:
         "You need {n} correct (about 84% on AHA written exams). The skills test is given by an authorized instructor; this set is practice only and does not issue a card.",
       unlockCta: "Unlock the full bank — $9.99",
-      supportCash: "Pay $9.99 — BTC, USDT, or Cash App",
+      supportCash: "Pay $9.99 — Cash App, BTC, or USDT",
       supportHome: "Unlock the full labs — $9.99",
       supportEyebrow: "Unlock the full bank",
       supportVince:
@@ -74,7 +74,7 @@
       cprNeed:
         "Necesita {n} correctas (cerca del 84% en los exámenes escritos de AHA). La prueba de destrezas la da un instructor autorizado; este conjunto es solo práctica y no emite una tarjeta.",
       unlockCta: "Desbloquear el banco completo — $9.99",
-      supportCash: "Pagar $9.99 — BTC, USDT o Cash App",
+      supportCash: "Pagar $9.99 — Cash App, BTC o USDT",
       supportHome: "Desbloquear los laboratorios — $9.99",
       supportEyebrow: "Desbloquear el banco completo",
       supportVince:

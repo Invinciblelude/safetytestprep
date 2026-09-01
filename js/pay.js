@@ -93,7 +93,7 @@ function stpWirePay() {
       return;
     }
     a.classList.remove("disabled");
-    a.href = base + "/" + amt;
+    a.href = base;
     a.target = "_blank";
     a.rel = "noopener";
   });
