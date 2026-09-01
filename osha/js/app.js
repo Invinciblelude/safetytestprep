@@ -1,4 +1,10 @@
 (function () {
+  function t(key) {
+    return window.stpT ? window.stpT(key) : key;
+  }
+  function isEs() {
+    return (document.documentElement.lang || "").indexOf("es") === 0;
+  }
   window.OSHA_QUESTIONS = window.OSHA_QUESTIONS || [];
   ["OSHA_QUESTIONS_SET2", "OSHA_QUESTIONS_SET3", "OSHA_QUESTIONS_SET4", "OSHA_QUESTIONS_SET5"].forEach((key) => {
     if (window[key] && window[key].length) {
@@ -76,9 +82,9 @@
 
   function renderQuestion() {
     const item = queue[index];
-    const spec = window.QUIZ_MODES[modeId] || { title: "Missed-question review" };
+    const spec = window.QUIZ_MODES[modeId] || { title: t("missedReview") };
     answered = false;
-    document.getElementById("quiz-progress").textContent = "Question " + (index + 1) + " of " + queue.length + " · Score " + score;
+    document.getElementById("quiz-progress").textContent = t("question") + " " + (index + 1) + " " + t("of") + " " + queue.length + " · " + t("score") + " " + score;
     document.getElementById("quiz-meter").style.width = ((index / queue.length) * 100) + "%";
     document.getElementById("quiz-topic").textContent = spec.title + " · " + item.topic;
     document.getElementById("quiz-prompt").textContent = item.q;
@@ -111,7 +117,7 @@
     explain.hidden = false;
     explain.textContent = item.why;
     document.getElementById("btn-next").hidden = false;
-    document.getElementById("quiz-progress").textContent = "Question " + (index + 1) + " of " + queue.length + " · Score " + score;
+    document.getElementById("quiz-progress").textContent = t("question") + " " + (index + 1) + " " + t("of") + " " + queue.length + " · " + t("score") + " " + score;
   }
 
   function nextQuestion() {
@@ -128,14 +134,13 @@
     const needed = spec.pass || Math.ceil(queue.length * 0.7);
     const passed = score >= needed;
     document.getElementById("result-kicker").textContent = spec.title;
-    document.getElementById("result-score").textContent = score + " / " + queue.length + (passed ? " · Pass" : " · Keep studying");
-    document.getElementById("result-detail").textContent =
-      "Review the explanations below, then try another quiz or a different topic. This is independent practice only. A 10- or 30-hour card can only be issued by an authorized Outreach trainer.";
+    document.getElementById("result-score").textContent = score + " / " + queue.length + (passed ? " · " + t("pass") : " · " + t("keepStudying"));
+    document.getElementById("result-detail").textContent = t("oshaResult");
     const list = document.getElementById("missed-list");
     list.innerHTML = "";
     missed.forEach((row) => {
       const li = document.createElement("li");
-      li.innerHTML = "<p><strong>" + row.item.q + "</strong></p><p>Your answer: " + row.picked + "</p><p>Correct: " + row.item.choices[row.item.a] + "</p><p>" + row.item.why + "</p>";
+      li.innerHTML = "<p><strong>" + row.item.q + "</strong></p><p>" + t("yourAnswer") + row.picked + "</p><p>" + t("correct") + row.item.choices[row.item.a] + "</p><p>" + row.item.why + "</p>";
       list.appendChild(li);
     });
     document.getElementById("quiz-meter").style.width = "100%";
@@ -179,17 +184,17 @@
 
   function renderFlash() {
     if (!deck.length) {
-      document.getElementById("flash-progress").textContent = "0 cards in this filter";
+      document.getElementById("flash-progress").textContent = t("zeroCards");
       document.getElementById("flash-topic").textContent = "";
-      document.getElementById("flash-text").textContent = "No cards left in this filter. Reset “Got it” cards by choosing All.";
+      document.getElementById("flash-text").textContent = t("noCards");
       document.getElementById("flash-hint").textContent = "";
       return;
     }
     const card = deck[deckIndex];
-    document.getElementById("flash-progress").textContent = (deckIndex + 1) + " / " + deck.length + " · " + window.OSHA_FLASHCARDS.length + " in bank";
+    document.getElementById("flash-progress").textContent = (deckIndex + 1) + " / " + deck.length + " · " + window.OSHA_FLASHCARDS.length + t("inBank");
     document.getElementById("flash-topic").textContent = card.topic;
     document.getElementById("flash-text").textContent = flipped ? card.back : card.front;
-    document.getElementById("flash-hint").textContent = flipped ? "Tap to hide answer" : "Tap to reveal";
+    document.getElementById("flash-hint").textContent = flipped ? t("tapHide") : t("tapReveal");
   }
 
   function markKnown(isKnown) {
@@ -213,46 +218,12 @@
     const cats = ["all", "intro", "focusFour", "fallProtection", "ladders", "stairways", "excavation", "electrical", "ppe", "hazcom", "loto", "materials", "tools", "health", "fire", "walking", "confined", "forklift", "hazwoper", "bloodborne", "welding", "steel", "concrete", "respiratory", "machineguard", "aerial", "demolition", "recordkeeping", "firstaid", "psm", "sanitation", "signs", "vehicles", "ergonomics"];
     const select = document.getElementById("bank-filter");
     if (!select.options.length) {
-      const labels = {
-        all: "All questions (" + window.OSHA_QUESTIONS.length + ")",
-        intro: "Introduction to OSHA",
-        focusFour: "Focus Four",
-        fallProtection: "Fall Protection",
-        ladders: "Ladders & Scaffolds",
-        stairways: "Stairways",
-        excavation: "Excavation & Trenching",
-        electrical: "Electrical Safety",
-        ppe: "PPE",
-        hazcom: "Hazard Communication",
-        loto: "Lockout / Tagout",
-        materials: "Cranes, Rigging & Materials",
-        tools: "Hand & Power Tools",
-        health: "Health Hazards",
-        fire: "Fire & Emergency Action",
-        walking: "Walking-Working Surfaces",
-        confined: "Confined Spaces",
-        forklift: "Powered Industrial Trucks",
-        hazwoper: "HAZWOPER",
-        bloodborne: "Bloodborne Pathogens",
-        welding: "Welding & Hot Work",
-        steel: "Steel Erection",
-        concrete: "Concrete & Masonry",
-        respiratory: "Respiratory Protection",
-        machineguard: "Machine Guarding",
-        aerial: "Aerial Lifts / MEWPs",
-        demolition: "Demolition",
-        recordkeeping: "Recordkeeping (1904)",
-        firstaid: "Medical & First Aid",
-        psm: "Process Safety Management",
-        sanitation: "Sanitation",
-        signs: "Signs, Signals & Barricades",
-        vehicles: "Motor Vehicles & Equipment",
-        ergonomics: "Ergonomics"
-      };
       cats.forEach((cat) => {
         const opt = document.createElement("option");
         opt.value = cat;
-        opt.textContent = labels[cat];
+        opt.textContent = window.stpBankLabel
+          ? window.stpBankLabel("osha", cat, window.OSHA_QUESTIONS.length)
+          : cat;
         select.appendChild(opt);
       });
       select.addEventListener("change", () => renderBank(select.value));
@@ -305,7 +276,7 @@
     score = 0;
     index = 0;
     modeId = lastMode;
-    document.getElementById("quiz-title").textContent = "Missed-question review";
+    document.getElementById("quiz-title").textContent = t("missedReview");
     renderQuestion();
     show("quiz");
   });

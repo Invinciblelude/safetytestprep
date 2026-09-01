@@ -1,33 +1,423 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://safetytestprep.com/</loc><lastmod>2026-08-31</lastmod></url>
-  <url><loc>https://safetytestprep.com/about.html</loc><lastmod>2026-08-31</lastmod></url>
-  <url><loc>https://safetytestprep.com/why.html</loc><lastmod>2026-08-31</lastmod></url>
-  <url><loc>https://safetytestprep.com/contact.html</loc><lastmod>2026-08-31</lastmod></url>
-  <url><loc>https://safetytestprep.com/privacy.html</loc><lastmod>2026-08-31</lastmod></url>
-  <url><loc>https://safetytestprep.com/terms.html</loc><lastmod>2026-08-31</lastmod></url>
-  <url><loc>https://safetytestprep.com/disclaimer.html</loc><lastmod>2026-08-31</lastmod></url>
-  <url><loc>https://safetytestprep.com/accessibility.html</loc><lastmod>2026-08-31</lastmod></url>
-  <url><loc>https://safetytestprep.com/copyright.html</loc><lastmod>2026-08-31</lastmod></url>
-  <url><loc>https://safetytestprep.com/legal.html</loc><lastmod>2026-08-31</lastmod></url>
-  <url><loc>https://safetytestprep.com/support.html</loc><lastmod>2026-08-31</lastmod></url>
-  <url><loc>https://safetytestprep.com/osha-10-practice.html</loc><lastmod>2026-08-31</lastmod></url>
-  <url><loc>https://safetytestprep.com/california-cdl-practice.html</loc><lastmod>2026-08-31</lastmod></url>
-  <url><loc>https://safetytestprep.com/cpr-aed-practice.html</loc><lastmod>2026-08-31</lastmod></url>
-  <url><loc>https://safetytestprep.com/osha/</loc><lastmod>2026-08-31</lastmod></url>
-  <url><loc>https://safetytestprep.com/osha/fall-protection.html</loc><lastmod>2026-08-31</lastmod></url>
-  <url><loc>https://safetytestprep.com/osha/ladder-safety.html</loc><lastmod>2026-08-31</lastmod></url>
-  <url><loc>https://safetytestprep.com/osha/ppe.html</loc><lastmod>2026-08-31</lastmod></url>
-  <url><loc>https://safetytestprep.com/osha/hazard-communication.html</loc><lastmod>2026-08-31</lastmod></url>
-  <url><loc>https://safetytestprep.com/osha/focus-four.html</loc><lastmod>2026-08-31</lastmod></url>
-  <url><loc>https://safetytestprep.com/osha/excavation.html</loc><lastmod>2026-08-31</lastmod></url>
-  <url><loc>https://safetytestprep.com/osha/electrical.html</loc><lastmod>2026-08-31</lastmod></url>
-  <url><loc>https://safetytestprep.com/osha/lockout-tagout.html</loc><lastmod>2026-08-31</lastmod></url>
-  <url><loc>https://safetytestprep.com/cdl/</loc><lastmod>2026-08-31</lastmod></url>
-  <url><loc>https://safetytestprep.com/cdl/general-knowledge.html</loc><lastmod>2026-08-31</lastmod></url>
-  <url><loc>https://safetytestprep.com/cdl/air-brakes.html</loc><lastmod>2026-08-31</lastmod></url>
-  <url><loc>https://safetytestprep.com/cdl/combination-vehicles.html</loc><lastmod>2026-08-31</lastmod></url>
-  <url><loc>https://safetytestprep.com/cpr/</loc><lastmod>2026-08-31</lastmod></url>
-  <url><loc>https://safetytestprep.com/cpr/adult-cpr.html</loc><lastmod>2026-08-31</lastmod></url>
-  <url><loc>https://safetytestprep.com/cpr/aed.html</loc><lastmod>2026-08-31</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://safetytestprep.com/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/about.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/about.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/about.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/about.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/why.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/why.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/why.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/why.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/why.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/why.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/why.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/why.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/contact.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/contact.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/contact.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/contact.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/privacy.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/privacy.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/terms.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/terms.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/terms.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/terms.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/disclaimer.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/disclaimer.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/disclaimer.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/disclaimer.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/disclaimer.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/disclaimer.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/disclaimer.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/disclaimer.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/accessibility.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/accessibility.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/accessibility.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/accessibility.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/accessibility.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/accessibility.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/accessibility.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/accessibility.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/copyright.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/copyright.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/copyright.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/copyright.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/copyright.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/copyright.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/copyright.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/copyright.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/legal.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/legal.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/legal.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/legal.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/support.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/support.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/support.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/support.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/support.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/support.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/support.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/support.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/osha-10-practice.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/osha-10-practice.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/osha-10-practice.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/osha-10-practice.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/osha-10-practice.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/osha-10-practice.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/osha-10-practice.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/osha-10-practice.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/california-cdl-practice.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/california-cdl-practice.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/california-cdl-practice.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/california-cdl-practice.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/california-cdl-practice.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/california-cdl-practice.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/california-cdl-practice.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/california-cdl-practice.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/cpr-aed-practice.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/cpr-aed-practice.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/cpr-aed-practice.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/cpr-aed-practice.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/cpr-aed-practice.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/cpr-aed-practice.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/cpr-aed-practice.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/cpr-aed-practice.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/osha/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/osha/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/osha/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/osha/"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/osha/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/osha/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/osha/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/osha/"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/osha/fall-protection.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/osha/fall-protection.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/osha/fall-protection.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/osha/fall-protection.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/osha/fall-protection.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/osha/fall-protection.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/osha/fall-protection.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/osha/fall-protection.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/osha/ladder-safety.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/osha/ladder-safety.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/osha/ladder-safety.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/osha/ladder-safety.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/osha/ladder-safety.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/osha/ladder-safety.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/osha/ladder-safety.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/osha/ladder-safety.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/osha/ppe.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/osha/ppe.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/osha/ppe.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/osha/ppe.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/osha/ppe.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/osha/ppe.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/osha/ppe.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/osha/ppe.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/osha/hazard-communication.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/osha/hazard-communication.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/osha/hazard-communication.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/osha/hazard-communication.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/osha/hazard-communication.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/osha/hazard-communication.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/osha/hazard-communication.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/osha/hazard-communication.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/osha/focus-four.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/osha/focus-four.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/osha/focus-four.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/osha/focus-four.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/osha/focus-four.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/osha/focus-four.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/osha/focus-four.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/osha/focus-four.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/osha/excavation.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/osha/excavation.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/osha/excavation.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/osha/excavation.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/osha/excavation.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/osha/excavation.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/osha/excavation.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/osha/excavation.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/osha/electrical.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/osha/electrical.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/osha/electrical.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/osha/electrical.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/osha/electrical.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/osha/electrical.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/osha/electrical.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/osha/electrical.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/osha/lockout-tagout.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/osha/lockout-tagout.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/osha/lockout-tagout.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/osha/lockout-tagout.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/osha/lockout-tagout.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/osha/lockout-tagout.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/osha/lockout-tagout.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/osha/lockout-tagout.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/cdl/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/cdl/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/cdl/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/cdl/"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/cdl/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/cdl/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/cdl/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/cdl/"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/cdl/general-knowledge.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/cdl/general-knowledge.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/cdl/general-knowledge.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/cdl/general-knowledge.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/cdl/general-knowledge.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/cdl/general-knowledge.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/cdl/general-knowledge.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/cdl/general-knowledge.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/cdl/air-brakes.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/cdl/air-brakes.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/cdl/air-brakes.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/cdl/air-brakes.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/cdl/air-brakes.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/cdl/air-brakes.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/cdl/air-brakes.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/cdl/air-brakes.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/cdl/combination-vehicles.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/cdl/combination-vehicles.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/cdl/combination-vehicles.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/cdl/combination-vehicles.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/cdl/combination-vehicles.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/cdl/combination-vehicles.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/cdl/combination-vehicles.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/cdl/combination-vehicles.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/cpr/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/cpr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/cpr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/cpr/"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/cpr/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/cpr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/cpr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/cpr/"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/cpr/adult-cpr.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/cpr/adult-cpr.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/cpr/adult-cpr.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/cpr/adult-cpr.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/cpr/adult-cpr.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/cpr/adult-cpr.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/cpr/adult-cpr.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/cpr/adult-cpr.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/cpr/aed.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/cpr/aed.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/cpr/aed.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/cpr/aed.html"/>
+  </url>
+  <url>
+    <loc>https://safetytestprep.com/es/cpr/aed.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safetytestprep.com/cpr/aed.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://safetytestprep.com/es/cpr/aed.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safetytestprep.com/cpr/aed.html"/>
+  </url>
 </urlset>

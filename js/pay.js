@@ -41,7 +41,9 @@ function stpCryptoHtml() {
         stpEscapeHtml(item.address) +
         "</code> <button type='button' class='tip-copy' data-copy='" +
         stpEscapeHtml(item.address) +
-        "'>Copy</button>" +
+        "'>" +
+        (window.stpT ? window.stpT("copy") : "Copy") +
+        "</button>" +
         note +
         "</p>"
       );
@@ -56,7 +58,7 @@ function stpBindCopy(root) {
       const addr = btn.getAttribute("data-copy") || "";
       if (!addr) return;
       const done = function () {
-        btn.textContent = "Copied";
+        btn.textContent = window.stpT ? window.stpT("copied") : "Copied";
       };
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(addr).then(done);

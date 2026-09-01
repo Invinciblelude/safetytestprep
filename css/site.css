@@ -58,6 +58,27 @@ a:focus-visible, button:focus-visible {
 .nav .brand { font-weight: 800; color: var(--amber); margin-right: 8px; }
 .nav-links { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; }
 .nav-cta { margin-left: auto; }
+.lang-switch {
+  display: inline-flex;
+  gap: 2px;
+  margin-left: auto;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 2px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.nav-cta { margin-left: 0; }
+.lang-switch a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+.lang-switch a[aria-current="true"] {
+  background: var(--amber);
+  color: #1a1204;
+}
 .banner {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -283,4 +304,5 @@ a.tag:hover { border-color: var(--amber); color: var(--amber); }
 @media (max-width: 700px) {
   h1 { font-size: 36px; }
   .nav-cta { width: 100%; text-align: center; margin-left: 0; }
+  .lang-switch { margin-left: 0; }
 }

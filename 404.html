@@ -7,23 +7,58 @@
   <meta name="description" content="That page is missing. Use the free OSHA, California CDL, or CPR/AED practice tests instead." />
   <meta name="robots" content="noindex, follow" />
   <link rel="canonical" href="https://safetytestprep.com/404.html" />
-  <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="css/site.css" />
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/site.css" />
+  <script>
+    (function () {
+      var es = /^\/es(\/|$)/.test(location.pathname);
+      if (es) document.documentElement.lang = "es";
+      window.STP_404_BASE = es ? "/es/" : "/";
+    })();
+  </script>
 </head>
 <body>
   <div class="wrap">
     <nav data-stp-nav></nav>
-    <p class="eyebrow">404</p>
-    <h1>This page is not here.</h1>
-    <p class="lede">The link may be old. The free practice tests are still here.</p>
-    <p class="btns">
-      <a class="btn" href="osha/">OSHA practice</a>
-      <a class="btn ghost" href="cdl/">California CDL</a>
-      <a class="btn ghost" href="cpr/">CPR/AED</a>
-    </p>
-    <p>Popular quizzes: <a href="osha/fall-protection.html">Fall protection</a> · <a href="cdl/general-knowledge.html">CDL General Knowledge</a> · <a href="cpr/adult-cpr.html">Adult CPR</a></p>
+    <div id="copy-en">
+      <p class="eyebrow">404</p>
+      <h1>This page is not here.</h1>
+      <p class="lede">The link may be old. The free practice tests are still here.</p>
+      <p class="btns">
+        <a class="btn" href="/osha/">OSHA practice</a>
+        <a class="btn ghost" href="/cdl/">California CDL</a>
+        <a class="btn ghost" href="/cpr/">CPR/AED</a>
+      </p>
+      <p>Popular quizzes: <a href="/osha/fall-protection.html">Fall protection</a> · <a href="/cdl/general-knowledge.html">CDL General Knowledge</a> · <a href="/cpr/adult-cpr.html">Adult CPR</a></p>
+    </div>
+    <div id="copy-es" hidden>
+      <p class="eyebrow">404</p>
+      <h1>Esta página no está aquí.</h1>
+      <p class="lede">El enlace puede ser antiguo. Los exámenes de práctica gratis siguen aquí.</p>
+      <p class="btns">
+        <a class="btn" href="/es/osha/">Práctica OSHA</a>
+        <a class="btn ghost" href="/es/cdl/">CDL de California</a>
+        <a class="btn ghost" href="/es/cpr/">RCP/DEA</a>
+      </p>
+      <p>Cuestionarios populares: <a href="/es/osha/fall-protection.html">Protección contra caídas</a> · <a href="/es/cdl/general-knowledge.html">Conocimientos generales CDL</a> · <a href="/es/cpr/adult-cpr.html">RCP en adultos</a></p>
+    </div>
     <footer data-stp-footer></footer>
   </div>
-  <script src="js/chrome.js"></script>
+  <script>
+    (function () {
+      var es = (document.documentElement.lang || "").indexOf("es") === 0;
+      var nav = document.querySelector("[data-stp-nav]");
+      var foot = document.querySelector("[data-stp-footer]");
+      var base = window.STP_404_BASE || "/";
+      if (nav) nav.setAttribute("data-base", base);
+      if (foot) foot.setAttribute("data-base", base);
+      if (es) {
+        document.getElementById("copy-en").hidden = true;
+        document.getElementById("copy-es").hidden = false;
+        document.title = "Página no encontrada — Safety Test Prep";
+      }
+    })();
+  </script>
+  <script src="/js/chrome.js"></script>
 </body>
 </html>

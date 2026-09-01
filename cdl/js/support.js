@@ -1,6 +1,8 @@
 window.SUPPORT_CONFIG = {
   product: "the CDL Practice Lab",
   credential: "a CDL, DMV exam result, license, or priority access",
+  credentialEs: "una CDL, resultado de examen del DMV, licencia o acceso prioritario",
+  bodyKey: "supportCdlBody",
   cashapp: ""
 };
 
@@ -11,6 +13,9 @@ window.SUPPORT_CONFIG = {
 })();
 
 (function () {
+  function t(key) {
+    return window.stpT ? window.stpT(key) : key;
+  }
   function cashappBase() {
     let s = String((window.SUPPORT_CONFIG && window.SUPPORT_CONFIG.cashapp) || "").trim();
     if (!s) return "";
@@ -41,31 +46,34 @@ window.SUPPORT_CONFIG = {
     const live = Boolean(cashappBase());
     const href = hrefFor("9.99") || hrefFor("10");
     const tag = tagLabel();
+    const cred = (window.STP_LANG === "es" && c.credentialEs) ? c.credentialEs : (c.credential || "a credential");
+    const body = t(c.bodyKey || "supportCdlBody");
+    const cashLabel = t("supportCash");
     const btn = href
-      ? "<a class='tip-btn' href='" + href + "' target='_blank' rel='noopener'>Support Safety Test Prep — $9.99 via Cash App</a>"
-      : "<span class='tip-btn disabled'>Support Safety Test Prep — $9.99 via Cash App</span>";
+      ? "<a class='tip-btn' href='" + href + "' target='_blank' rel='noopener'>" + cashLabel + "</a>"
+      : "<span class='tip-btn disabled'>" + cashLabel + "</span>";
 
     if (variant === "home") {
       el.innerHTML =
-        "<p class='tip-other'><a href='../support.html'>Keep Safety Test Prep free — optional support</a></p>";
+        "<p class='tip-other'><a href='../support.html'>" + t("supportHome") + "</a></p>";
       return;
     }
 
+    const cashNote = tag && href
+      ? "<p class='tip-other'>" + t("supportCashNote").replace("{tag}", "<a href='" + cashappBase() + "' target='_blank' rel='noopener'>" + tag + "</a>") + "</p>"
+      : "";
+
     el.innerHTML =
-      "<p class='eyebrow'>Keep the lab open</p>" +
-      "<p>I’m Vince. I built Safety Test Prep to make practical safety study tools easier to access for workers, job seekers, and people entering the trades.</p>" +
-      "<p>You used original handbook-based CDL practice questions and explanations—without an account or paywall. Safety Test Prep is free to use. If this quiz helped you prepare, optional support of $9.99 helps fund research, question writing, review, and updates.</p>" +
+      "<p class='eyebrow'>" + t("supportEyebrow") + "</p>" +
+      "<p>" + t("supportVince") + "</p>" +
+      "<p>" + body + "</p>" +
       "<div class='support-amounts'>" +
       btn +
       "</div>" +
-      (tag && href
-        ? "<p class='tip-other'>Cash App: <a href='" + cashappBase() + "' target='_blank' rel='noopener'>" + tag + "</a>. Note: Safety Test Prep support. The account may display as Andy Lau until the display name is updated.</p>"
-        : "") +
-      "<p class='tip-other'>Payment is optional. If you cannot contribute right now, keep studying.</p>" +
-      "<p class='tip-other'>Support does not purchase " +
-      (c.credential || "a credential") +
-      ".</p>" +
-      (live ? "" : "<p class='tip-other'>Cash App is not enabled yet.</p>");
+      cashNote +
+      "<p class='tip-other'>" + t("supportOptional") + "</p>" +
+      "<p class='tip-other'>" + t("supportDoesNot") + cred + ".</p>" +
+      (live ? "" : "<p class='tip-other'>" + t("supportNotLive") + "</p>");
   }
 
   window.renderSupport = render;

@@ -1,4 +1,7 @@
 (function () {
+  function t(key) {
+    return window.stpT ? window.stpT(key) : key;
+  }
   if (window.CDL_QUESTIONS_SET2 && window.CDL_QUESTIONS_SET2.length) {
     window.CDL_QUESTIONS = window.CDL_QUESTIONS.concat(window.CDL_QUESTIONS_SET2);
   }
@@ -75,7 +78,7 @@
     const item = queue[index];
     const spec = window.QUIZ_MODES[modeId];
     answered = false;
-    document.getElementById("quiz-progress").textContent = "Question " + (index + 1) + " of " + queue.length + " · Score " + score;
+    document.getElementById("quiz-progress").textContent = t("question") + " " + (index + 1) + " " + t("of") + " " + queue.length + " · " + t("score") + " " + score;
     document.getElementById("quiz-meter").style.width = ((index / queue.length) * 100) + "%";
     document.getElementById("quiz-topic").textContent = spec.title + " · " + item.topic;
     document.getElementById("quiz-prompt").textContent = item.q;
@@ -108,7 +111,7 @@
     explain.hidden = false;
     explain.textContent = item.why;
     document.getElementById("btn-next").hidden = false;
-    document.getElementById("quiz-progress").textContent = "Question " + (index + 1) + " of " + queue.length + " · Score " + score;
+    document.getElementById("quiz-progress").textContent = t("question") + " " + (index + 1) + " " + t("of") + " " + queue.length + " · " + t("score") + " " + score;
   }
 
   function nextQuestion() {
@@ -125,13 +128,13 @@
     const needed = spec.pass || Math.ceil(queue.length * 0.8);
     const passed = score >= needed;
     document.getElementById("result-kicker").textContent = spec.title;
-    document.getElementById("result-score").textContent = score + " / " + queue.length + (passed ? " · Pass" : " · Keep studying");
-    document.getElementById("result-detail").textContent = "You need " + needed + " correct (80%). Official DMV tests are separate by subject; this set is for practice only.";
+    document.getElementById("result-score").textContent = score + " / " + queue.length + (passed ? " · " + t("pass") : " · " + t("keepStudying"));
+    document.getElementById("result-detail").textContent = t("cdlNeed").replace("{n}", String(needed));
     const list = document.getElementById("missed-list");
     list.innerHTML = "";
     missed.forEach((row) => {
       const li = document.createElement("li");
-      li.innerHTML = "<p><strong>" + row.item.q + "</strong></p><p>Your answer: " + row.picked + "</p><p>Correct: " + row.item.choices[row.item.a] + "</p><p>" + row.item.why + "</p>";
+      li.innerHTML = "<p><strong>" + row.item.q + "</strong></p><p>" + t("yourAnswer") + row.picked + "</p><p>" + t("correct") + row.item.choices[row.item.a] + "</p><p>" + row.item.why + "</p>";
       list.appendChild(li);
     });
     document.getElementById("quiz-meter").style.width = "100%";
@@ -175,17 +178,17 @@
 
   function renderFlash() {
     if (!deck.length) {
-      document.getElementById("flash-progress").textContent = "0 cards in this filter";
+      document.getElementById("flash-progress").textContent = t("zeroCards");
       document.getElementById("flash-topic").textContent = "";
-      document.getElementById("flash-text").textContent = "No cards left in this filter. Reset “Got it” cards by choosing All.";
+      document.getElementById("flash-text").textContent = t("noCards");
       document.getElementById("flash-hint").textContent = "";
       return;
     }
     const card = deck[deckIndex];
-    document.getElementById("flash-progress").textContent = (deckIndex + 1) + " / " + deck.length + " · " + window.CDL_FLASHCARDS.length + " in bank";
+    document.getElementById("flash-progress").textContent = (deckIndex + 1) + " / " + deck.length + " · " + window.CDL_FLASHCARDS.length + t("inBank");
     document.getElementById("flash-topic").textContent = card.topic;
     document.getElementById("flash-text").textContent = flipped ? card.back : card.front;
-    document.getElementById("flash-hint").textContent = flipped ? "Tap to hide answer" : "Tap to reveal";
+    document.getElementById("flash-hint").textContent = flipped ? t("tapHide") : t("tapReveal");
   }
 
   function markKnown(isKnown) {
@@ -209,21 +212,12 @@
     const cats = ["all", "general", "airBrakes", "combination", "pretrip", "doubles", "tanker", "hazmat", "passenger"];
     const select = document.getElementById("bank-filter");
     if (!select.options.length) {
-      const labels = {
-        all: "All questions (" + window.CDL_QUESTIONS.length + ")",
-        general: "General Knowledge",
-        airBrakes: "Air Brakes",
-        combination: "Combination Vehicles",
-        pretrip: "Pre-Trip",
-        doubles: "Doubles / Triples",
-        tanker: "Tank Vehicles",
-        hazmat: "Hazardous Materials",
-        passenger: "Passenger"
-      };
       cats.forEach((cat) => {
         const opt = document.createElement("option");
         opt.value = cat;
-        opt.textContent = labels[cat];
+        opt.textContent = window.stpBankLabel
+          ? window.stpBankLabel("cdl", cat, window.CDL_QUESTIONS.length)
+          : cat;
         select.appendChild(opt);
       });
       select.addEventListener("change", () => renderBank(select.value));
@@ -272,7 +266,7 @@
     score = 0;
     index = 0;
     modeId = lastMode;
-    document.getElementById("quiz-title").textContent = "Missed-question review";
+    document.getElementById("quiz-title").textContent = t("missedReview");
     renderQuestion();
     show("quiz");
   });

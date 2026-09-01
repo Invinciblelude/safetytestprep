@@ -1,45 +1,232 @@
 (function () {
+  var lang = (document.documentElement.getAttribute("lang") || "en").toLowerCase();
+  var isEs = lang.indexOf("es") === 0;
+  window.STP_LANG = isEs ? "es" : "en";
+
+  var path = location.pathname || "/";
+  var origin = "https://safetytestprep.com";
+  function normalize(p) {
+    if (!p || p === "/es") return p === "/es" ? "/es/" : "/";
+    return p;
+  }
+  path = normalize(path);
+  var enPath = path.replace(/^\/es(?=\/|$)/, "") || "/";
+  if (enPath.charAt(0) !== "/") enPath = "/" + enPath;
+  var esPath = /^\/es(\/|$)/.test(path) ? path : "/es" + (enPath === "/" ? "/" : enPath);
+  var enUrl = origin + enPath;
+  var esUrl = origin + esPath;
+  var selfUrl = isEs ? esUrl : enUrl;
+
+  if (!document.querySelector('link[rel="canonical"]')) {
+    var can = document.createElement("link");
+    can.rel = "canonical";
+    can.href = selfUrl;
+    document.head.appendChild(can);
+  }
+  function addAlt(hreflang, href) {
+    if (document.querySelector('link[hreflang="' + hreflang + '"]')) return;
+    var l = document.createElement("link");
+    l.rel = "alternate";
+    l.hreflang = hreflang;
+    l.href = href;
+    document.head.appendChild(l);
+  }
+  addAlt("en", enUrl);
+  addAlt("es", esUrl);
+  addAlt("x-default", enUrl);
+
   var foot = document.querySelector("[data-stp-footer]");
   var nav = document.querySelector("[data-stp-nav]");
   var base = "";
   if (foot) base = foot.getAttribute("data-base") || "";
   if (nav && nav.getAttribute("data-base") != null) base = nav.getAttribute("data-base") || base;
 
+  var copy = isEs
+    ? {
+        osha: "OSHA",
+        cdl: "CDL de California",
+        cpr: "RCP/DEA",
+        about: "Acerca de",
+        contact: "Contacto",
+        start: "Empezar a practicar",
+        blurb: "Recursos independientes de práctica sobre temas de OSHA, conocimientos de CDL de California y fundamentos de RCP/DEA.",
+        fall: "Cuestionario de protección contra caídas",
+        gk: "Conocimientos generales CDL",
+        adult: "Cuestionario de RCP en adultos",
+        privacy: "Privacidad",
+        terms: "Términos",
+        disclaimer: "Aviso legal",
+        support: "Mantenga los laboratorios gratis — apoyo opcional",
+        legal:
+          "© 2026 Safety Test Prep. Solo práctica educativa independiente. No se emiten certificaciones, tarjetas, licencias ni credenciales gubernamentales. No estamos afiliados ni respaldados por OSHA, el Departamento de Trabajo de EE. UU., el DMV de California, la American Heart Association, la Cruz Roja Americana ni ninguna agencia gubernamental.",
+        copyLabel: "Copie este enlace",
+        copied: "Enlace copiado",
+        copyBelow: "Copie el enlace de abajo",
+        copiedShort: "Copiado",
+        selectText: "Seleccione el texto de arriba"
+      }
+    : {
+        osha: "OSHA",
+        cdl: "California CDL",
+        cpr: "CPR/AED",
+        about: "About",
+        contact: "Contact",
+        start: "Start Practicing",
+        blurb: "Independent practice resources for OSHA topics, California CDL knowledge, and CPR/AED fundamentals.",
+        fall: "Fall protection quiz",
+        gk: "CDL General Knowledge",
+        adult: "Adult CPR quiz",
+        privacy: "Privacy",
+        terms: "Terms",
+        disclaimer: "Disclaimer",
+        support: "Keep the labs free — optional support",
+        legal:
+          "© 2026 Safety Test Prep. Independent educational practice only. No certifications, cards, licenses, or government credentials are issued. Not affiliated with or endorsed by OSHA, the U.S. Department of Labor, the California DMV, the American Heart Association, the American Red Cross, or any government agency.",
+        copyLabel: "Copy this link",
+        copied: "Link copied",
+        copyBelow: "Copy the link below",
+        copiedShort: "Copied",
+        selectText: "Select the text above"
+      };
+
+  var langSwitch =
+    '<span class="lang-switch" role="navigation" aria-label="' +
+    (isEs ? "Idioma" : "Language") +
+    '">' +
+    '<a href="' +
+    enPath +
+    '" lang="en" hreflang="en"' +
+    (isEs ? "" : ' aria-current="true"') +
+    ">EN</a>" +
+    '<a href="' +
+    esPath +
+    '" lang="es" hreflang="es"' +
+    (isEs ? ' aria-current="true"' : "") +
+    ">ES</a>" +
+    "</span>";
+
   if (nav) {
     nav.className = (nav.className + " nav").trim();
     nav.innerHTML =
-      '<a class="brand" href="' + base + 'index.html">Safety Test Prep</a>' +
+      '<a class="brand" href="' +
+      base +
+      'index.html">Safety Test Prep</a>' +
       '<span class="nav-links">' +
-      '<a href="' + base + 'osha-10-practice.html">OSHA</a>' +
-      '<a href="' + base + 'california-cdl-practice.html">California CDL</a>' +
-      '<a href="' + base + 'cpr-aed-practice.html">CPR/AED</a>' +
-      '<a href="' + base + 'about.html">About</a>' +
-      '<a href="' + base + 'contact.html">Contact</a>' +
+      '<a href="' +
+      base +
+      'osha-10-practice.html">' +
+      copy.osha +
+      "</a>" +
+      '<a href="' +
+      base +
+      'california-cdl-practice.html">' +
+      copy.cdl +
+      "</a>" +
+      '<a href="' +
+      base +
+      'cpr-aed-practice.html">' +
+      copy.cpr +
+      "</a>" +
+      '<a href="' +
+      base +
+      'about.html">' +
+      copy.about +
+      "</a>" +
+      '<a href="' +
+      base +
+      'contact.html">' +
+      copy.contact +
+      "</a>" +
       "</span>" +
-      '<a class="btn ghost nav-cta" href="' + base + 'osha/">Start Practicing</a>';
+      langSwitch +
+      '<a class="btn ghost nav-cta" href="' +
+      base +
+      'osha/">' +
+      copy.start +
+      "</a>";
+  } else {
+    var first = document.querySelector(".topbar > div");
+    if (first) {
+      var wrap = document.createElement("div");
+      wrap.className = "lab-lang";
+      wrap.innerHTML = langSwitch;
+      first.appendChild(wrap);
+    }
   }
 
   if (foot) {
     if (foot.className.indexOf("legal-foot") === -1) foot.className = (foot.className + " legal-foot").trim();
     var b = foot.getAttribute("data-base") || base;
     foot.innerHTML =
-      "<p>Independent practice resources for OSHA topics, California CDL knowledge, and CPR/AED fundamentals.</p>" +
+      "<p>" +
+      copy.blurb +
+      "</p>" +
       '<p class="foot-links">' +
-      '<a href="' + b + 'osha-10-practice.html">OSHA</a> · ' +
-      '<a href="' + b + 'california-cdl-practice.html">California CDL</a> · ' +
-      '<a href="' + b + 'cpr-aed-practice.html">CPR/AED</a> · ' +
-      '<a href="' + b + 'about.html">About</a> · ' +
-      '<a href="' + b + 'contact.html">Contact</a></p>' +
+      '<a href="' +
+      b +
+      'osha-10-practice.html">' +
+      copy.osha +
+      "</a> · " +
+      '<a href="' +
+      b +
+      'california-cdl-practice.html">' +
+      copy.cdl +
+      "</a> · " +
+      '<a href="' +
+      b +
+      'cpr-aed-practice.html">' +
+      copy.cpr +
+      "</a> · " +
+      '<a href="' +
+      b +
+      'about.html">' +
+      copy.about +
+      "</a> · " +
+      '<a href="' +
+      b +
+      'contact.html">' +
+      copy.contact +
+      "</a></p>" +
       '<p class="foot-links">' +
-      '<a href="' + b + 'osha/fall-protection.html">Fall protection quiz</a> · ' +
-      '<a href="' + b + 'cdl/general-knowledge.html">CDL General Knowledge</a> · ' +
-      '<a href="' + b + 'cpr/adult-cpr.html">Adult CPR quiz</a></p>' +
+      '<a href="' +
+      b +
+      'osha/fall-protection.html">' +
+      copy.fall +
+      "</a> · " +
+      '<a href="' +
+      b +
+      'cdl/general-knowledge.html">' +
+      copy.gk +
+      "</a> · " +
+      '<a href="' +
+      b +
+      'cpr/adult-cpr.html">' +
+      copy.adult +
+      "</a></p>" +
       '<p class="foot-links">' +
-      '<a href="' + b + 'privacy.html">Privacy</a> · ' +
-      '<a href="' + b + 'terms.html">Terms</a> · ' +
-      '<a href="' + b + 'disclaimer.html">Disclaimer</a> · ' +
-      '<a href="' + b + 'support.html">Keep the labs free — optional support</a></p>' +
-      "<p>© 2026 Safety Test Prep. Independent educational practice only. No certifications, cards, licenses, or government credentials are issued. Not affiliated with or endorsed by OSHA, the U.S. Department of Labor, the California DMV, the American Heart Association, the American Red Cross, or any government agency.</p>";
+      '<a href="' +
+      b +
+      'privacy.html">' +
+      copy.privacy +
+      "</a> · " +
+      '<a href="' +
+      b +
+      'terms.html">' +
+      copy.terms +
+      "</a> · " +
+      '<a href="' +
+      b +
+      'disclaimer.html">' +
+      copy.disclaimer +
+      "</a> · " +
+      '<a href="' +
+      b +
+      'support.html">' +
+      copy.support +
+      "</a></p>" +
+      "<p>" +
+      copy.legal +
+      "</p>";
   }
 
   if (!document.querySelector('link[rel="icon"]')) {
@@ -91,7 +278,7 @@
     if (!box) {
       box = document.createElement("p");
       box.className = "share-fallback";
-      box.innerHTML = '<label>Copy this link<input class="share-link" type="text" readonly /></label>';
+      box.innerHTML = "<label>" + copy.copyLabel + '<input class="share-link" type="text" readonly /></label>';
       row.appendChild(box);
     }
     var input = box.querySelector("input");
@@ -106,7 +293,7 @@
   function markCopied(btn, ok) {
     var prev = btn.getAttribute("data-label") || btn.textContent;
     btn.setAttribute("data-label", prev);
-    btn.textContent = ok ? "Link copied" : "Copy the link below";
+    btn.textContent = ok ? copy.copied : copy.copyBelow;
     setTimeout(function () {
       btn.textContent = prev;
     }, 2200);
@@ -135,17 +322,19 @@
       });
       return;
     }
-    var copy = e.target.closest("[data-stp-copy]");
-    if (copy) {
+    var copyBtn = e.target.closest("[data-stp-copy]");
+    if (copyBtn) {
       e.preventDefault();
-      var sel = copy.getAttribute("data-stp-copy");
+      var sel = copyBtn.getAttribute("data-stp-copy");
       var el = sel ? document.querySelector(sel) : null;
-      var val = el ? (el.value || el.textContent) : "";
+      var val = el ? el.value || el.textContent : "";
       if (!val) return;
-      var prev = copy.textContent;
+      var prev = copyBtn.textContent;
       copyText(val.trim()).then(function (ok) {
-        copy.textContent = ok ? "Copied" : "Select the text above";
-        setTimeout(function () { copy.textContent = prev; }, 1600);
+        copyBtn.textContent = ok ? copy.copiedShort : copy.selectText;
+        setTimeout(function () {
+          copyBtn.textContent = prev;
+        }, 1600);
       });
     }
   });
