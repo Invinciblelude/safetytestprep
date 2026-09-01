@@ -1,5 +1,5 @@
 window.STP_SITE = {
-  contactEmail: "hello@safetytestprep.com"
+  contactEmail: "safetytestprep@gmail.com"
 };
 
 window.STP_PAY = {

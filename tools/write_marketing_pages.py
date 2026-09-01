@@ -662,7 +662,7 @@ add(
       <h2>The offer</h2>
       <p>Your people get free English and Spanish practice. You get a page you can put in an onboarding packet or a classroom slide. Optional: email Vince for a 10-minute call to pick the right starting quizzes for your trade. This does not replace Cal/OSHA-required employer training.</p>
       <p class="btns">
-        <a class="btn" href="mailto:hello@safetytestprep.com?subject=Team%20resource%20%E2%80%94%20Safety%20Test%20Prep">Email for a team resource</a>
+        <a class="btn" href="mailto:safetytestprep@gmail.com?subject=Team%20resource%20%E2%80%94%20Safety%20Test%20Prep">Email for a team resource</a>
         <a class="btn ghost" href="trades.html">See trade pages</a>
       </p>
     </section>
@@ -719,7 +719,7 @@ add(
       <h2>La oferta</h2>
       <p>Su gente obtiene práctica gratis en inglés y español. Usted obtiene una página para el paquete de ingreso o una diapositiva. Opcional: escriba a Vince para una llamada de 10 minutos y elegir los cuestionarios de partida para su oficio. Esto no sustituye la capacitación que Cal/OSHA exige al empleador.</p>
       <p class="btns">
-        <a class="btn" href="mailto:hello@safetytestprep.com?subject=Recurso%20para%20equipos%20%E2%80%94%20Safety%20Test%20Prep">Correo para un recurso de equipo</a>
+        <a class="btn" href="mailto:safetytestprep@gmail.com?subject=Recurso%20para%20equipos%20%E2%80%94%20Safety%20Test%20Prep">Correo para un recurso de equipo</a>
         <a class="btn ghost" href="trades.html">Ver páginas de oficios</a>
       </p>
     </section>

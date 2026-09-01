@@ -368,7 +368,7 @@
 
   var mail = document.getElementById("contact-mail");
   if (mail) {
-    var email = (window.STP_SITE && window.STP_SITE.contactEmail) || "hello@safetytestprep.com";
+    var email = (window.STP_SITE && window.STP_SITE.contactEmail) || "safetytestprep@gmail.com";
     mail.href = "mailto:" + email;
     mail.textContent = email;
   }
