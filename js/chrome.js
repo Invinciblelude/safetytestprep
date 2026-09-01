@@ -116,7 +116,7 @@
     nav.innerHTML =
       '<a class="brand" href="' +
       base +
-      'index.html">Safety Test Prep</a>' +
+      'index.html"><img class="brand-mark" src="/img/logo-mark.png" width="32" height="32" alt="">Safety Test Prep</a>' +
       '<span class="nav-links">' +
       '<a href="' +
       base +
