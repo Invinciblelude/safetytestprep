@@ -41,6 +41,9 @@ h1, h2, h3 { margin: 4px 0 0; letter-spacing: -0.02em; }
   box-shadow: var(--shadow);
 }
 .hero p, .study-order p { color: var(--muted); }
+.study-order details { margin: 10px 0; }
+.study-order summary { cursor: pointer; font-weight: 700; color: var(--ink); }
+.study-order details p { margin: 8px 0 0; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; margin: 16px 0; }
 .card {
   text-align: left;

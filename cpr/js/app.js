@@ -294,4 +294,9 @@
   document.querySelectorAll(".flash-filters .chip").forEach((chip) => {
     chip.addEventListener("click", () => startFlash(chip.dataset.deck));
   });
+
+  window.startCprQuiz = function (id) {
+    if (id && window.QUIZ_MODES[id]) buildQuiz(id);
+  };
+  window.startCprQuiz(new URLSearchParams(window.location.search).get("quiz"));
 })();

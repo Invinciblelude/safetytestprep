@@ -31,6 +31,10 @@
       '<a href="' + b + 'about.html">About</a> · ' +
       '<a href="' + b + 'contact.html">Contact</a></p>' +
       '<p class="foot-links">' +
+      '<a href="' + b + 'osha/fall-protection.html">Fall protection quiz</a> · ' +
+      '<a href="' + b + 'cdl/general-knowledge.html">CDL General Knowledge</a> · ' +
+      '<a href="' + b + 'cpr/adult-cpr.html">Adult CPR quiz</a></p>' +
+      '<p class="foot-links">' +
       '<a href="' + b + 'privacy.html">Privacy</a> · ' +
       '<a href="' + b + 'terms.html">Terms</a> · ' +
       '<a href="' + b + 'disclaimer.html">Disclaimer</a> · ' +
