@@ -57,7 +57,12 @@
     return window.OSHA_QUESTIONS.filter((item) => item.category === cat);
   }
 
+  function allow(mode) {
+    return !window.stpAllowStart || window.stpAllowStart(mode);
+  }
+
   function buildQuiz(id) {
+    if (!allow(id)) return;
     const spec = window.QUIZ_MODES[id];
     lastMode = id;
     modeId = id;
@@ -171,6 +176,7 @@
   }
 
   function startFlash(filter) {
+    if (!allow("flashcards")) return;
     deckFilter = filter || "all";
     deck = filteredDeck();
     deckIndex = 0;
@@ -215,6 +221,7 @@
   }
 
   function renderBank(filter) {
+    if (!allow("bank")) return;
     const cats = ["all", "intro", "focusFour", "fallProtection", "ladders", "stairways", "excavation", "electrical", "ppe", "hazcom", "loto", "materials", "tools", "health", "fire", "walking", "confined", "forklift", "hazwoper", "bloodborne", "welding", "steel", "concrete", "respiratory", "machineguard", "aerial", "demolition", "recordkeeping", "firstaid", "psm", "sanitation", "signs", "vehicles", "ergonomics"];
     const select = document.getElementById("bank-filter");
     if (!select.options.length) {
@@ -292,6 +299,11 @@
     chip.addEventListener("click", () => startFlash(chip.dataset.deck));
   });
 
+  window.stpStartMode = function (mode) {
+    if (mode === "flashcards") startFlash("all");
+    else if (mode === "bank") renderBank("all");
+    else if (mode && window.QUIZ_MODES[mode]) buildQuiz(mode);
+  };
   window.startOshaQuiz = function (id) {
     if (id && window.QUIZ_MODES[id]) buildQuiz(id);
   };

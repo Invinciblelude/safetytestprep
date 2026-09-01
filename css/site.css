@@ -87,7 +87,10 @@ h2 { font-size: 28px; letter-spacing: -0.03em; margin: 0 0 10px; }
 .reviewed { color: var(--muted); font-size: 13px; }
 .sources p, .sources li { color: var(--muted); font-size: 14px; }
 .grid { display: grid; gap: 12px; margin: 22px 0; }
-@media (min-width: 700px) { .grid { grid-template-columns: 1fr 1fr 1fr; } }
+@media (min-width: 700px) {
+  .grid { grid-template-columns: 1fr 1fr 1fr; }
+  .grid.cols-2 { grid-template-columns: 1fr 1fr; }
+}
 article, .panel {
   background: var(--panel);
   border: 1px solid var(--line);

@@ -996,7 +996,7 @@ def main() -> None:
         "Mantenga los laboratorios gratis",
         [
             '<p class="lede">Safety Test Prep es gratis. Si un cuestionario le ayudó a prepararse para el trabajo, una capacitación o un puesto nuevo, un apoyo opcional de $9.99 financia investigación, redacción de preguntas, revisión y actualizaciones. El pago no compra una tarjeta, licencia ni resultado de examen.</p>',
-            '<section class="price" id="pay"><h2>Cash App</h2><p>Soy Vince. Construí esto para que trabajadores y personas que buscan empleo puedan estudiar sin un muro de pago.</p><p id="pay-warn">Cash App aún no está activado.</p><p id="cash-line"></p><div class="btns"><a class="btn" data-cash="9.99">Apoye Safety Test Prep — $9.99 por Cash App</a></div><p>Nota: apoyo a Safety Test Prep. La cuenta de Cash App puede aparecer como Andy Lau hasta que se actualice el nombre.</p></section>',
+            '<section class="price" id="pay"><h2>Cash App</h2><p>Soy Vince. Construí esto para que trabajadores y personas que buscan empleo puedan estudiar sin un muro de pago.</p><p id="pay-warn">Cash App aún no está activado.</p><p id="cash-line"></p><div class="btns"><a class="btn" data-cash="9.99">Apoye Safety Test Prep — $9.99 por Cash App</a></div><p>Pague a <strong>$safetytestprep</strong>. Cash App debe mostrar el nombre <strong>Safety Test Prep</strong>. Verifique el $ antes de enviar.</p></section>',
             '<section class="price"><h2>Otras formas de apoyar</h2><p>Las transferencias de cripto son voluntarias e irreversibles. Verifique la red y la dirección antes de enviar. USDT debe enviarse solo en la red TRX / Tron.</p><div id="crypto-line"></div></section>',
         ],
         extra_scripts=[

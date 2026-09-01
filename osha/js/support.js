@@ -49,9 +49,14 @@ window.SUPPORT_CONFIG = {
     const cred = (window.STP_LANG === "es" && c.credentialEs) ? c.credentialEs : (c.credential || "a credential");
     const body = t(c.bodyKey || "supportOshaBody");
     const cashLabel = t("supportCash");
-    const btn = href
-      ? "<a class='tip-btn' href='" + href + "' target='_blank' rel='noopener'>" + cashLabel + "</a>"
-      : "<span class='tip-btn disabled'>" + cashLabel + "</span>";
+    const needsUnlock = window.stpShowPaywall && !(window.stpHasFullAccess && window.stpHasFullAccess());
+    const payBlock = needsUnlock
+      ? "<div class='support-amounts'><button type='button' class='tip-btn' data-stp-unlock>" + t("unlockCta") + "</button></div>"
+      : "<div class='support-amounts'>" +
+        (href
+          ? "<a class='tip-btn' href='" + href + "' target='_blank' rel='noopener'>" + cashLabel + "</a>"
+          : "<span class='tip-btn disabled'>" + cashLabel + "</span>") +
+        "</div>";
 
     if (variant === "home") {
       el.innerHTML =
@@ -67,9 +72,7 @@ window.SUPPORT_CONFIG = {
       "<p class='eyebrow'>" + t("supportEyebrow") + "</p>" +
       "<p>" + t("supportVince") + "</p>" +
       "<p>" + body + "</p>" +
-      "<div class='support-amounts'>" +
-      btn +
-      "</div>" +
+      payBlock +
       cashNote +
       "<p class='tip-other'>" + t("supportOptional") + "</p>" +
       "<p class='tip-other'>" + t("supportDoesNot") + cred + ".</p>" +

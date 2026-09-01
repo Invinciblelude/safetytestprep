@@ -29,22 +29,23 @@
         "You need {n} correct (80%). Official DMV tests are separate by subject; this set is for practice only.",
       cprNeed:
         "You need {n} correct (about 84% on AHA written exams). The skills test is given by an authorized instructor; this set is practice only and does not issue a card.",
-      supportCash: "Support Safety Test Prep — $9.99 via Cash App",
-      supportHome: "Keep Safety Test Prep free — optional support",
-      supportEyebrow: "Keep the lab open",
+      unlockCta: "Unlock the full bank — $9.99",
+      supportCash: "Pay $9.99 — Cash App, BTC, or USDT",
+      supportHome: "Unlock the full labs — $9.99",
+      supportEyebrow: "Unlock the full bank",
       supportVince:
         "I’m Vince. I built Safety Test Prep to make practical safety study tools easier to access for workers, job seekers, and people entering the trades.",
-      supportOptional: "Payment is optional. If you cannot contribute right now, keep studying.",
-      supportDoesNot: "Support does not purchase ",
+      supportOptional: "Fall protection, CDL General Knowledge, and Adult CPR stay free if you are not ready to pay.",
+      supportDoesNot: "Payment does not purchase ",
       supportCashNote:
-        "Cash App: {tag}. Note: Safety Test Prep support. The account may display as Andy Lau until the display name is updated.",
+        "Cash App: {tag}. Confirm $safetytestprep and the name Safety Test Prep. Bitcoin and USDT (Tron) are also accepted.",
       supportNotLive: "Cash App is not enabled yet.",
       supportOshaBody:
-        "You used original OSHA-topic questions, answer explanations, and flashcards—without an account or paywall. Safety Test Prep is free to use. If this quiz helped you prepare for work, training, or a new role, optional support of $9.99 helps fund research, question writing, review, and updates.",
+        "Fall protection is free. The rest of this OSHA lab — mocks, flashcards, and the 808-question bank — is $9.99 for 30 days on this device. Payment does not buy a card.",
       supportCdlBody:
-        "You used original handbook-based CDL practice questions and explanations—without an account or paywall. Safety Test Prep is free to use. If this quiz helped you prepare, optional support of $9.99 helps fund research, question writing, review, and updates.",
+        "CDL General Knowledge is free. Air Brakes, Combination, endorsements, flashcards, and the full bank are $9.99 for 30 days on this device. Payment does not buy a license.",
       supportCprBody:
-        "You used original CPR/AED knowledge-review questions and explanations—without an account or paywall. Safety Test Prep is free to use. If this quiz helped you prepare, optional support of $9.99 helps fund research, question writing, review, and updates."
+        "Adult CPR is free. AED, pediatric, first aid, flashcards, and the 435-question bank are $9.99 for 30 days on this device. Payment does not buy a certification."
     },
     es: {
       question: "Pregunta",
@@ -72,22 +73,23 @@
         "Necesita {n} correctas (80%). Los exámenes oficiales del DMV son por materia; este conjunto es solo práctica.",
       cprNeed:
         "Necesita {n} correctas (cerca del 84% en los exámenes escritos de AHA). La prueba de destrezas la da un instructor autorizado; este conjunto es solo práctica y no emite una tarjeta.",
-      supportCash: "Apoye Safety Test Prep — $9.99 por Cash App",
-      supportHome: "Mantenga Safety Test Prep gratis — apoyo opcional",
-      supportEyebrow: "Mantenga el laboratorio abierto",
+      unlockCta: "Desbloquear el banco completo — $9.99",
+      supportCash: "Pagar $9.99 — Cash App, BTC o USDT",
+      supportHome: "Desbloquear los laboratorios — $9.99",
+      supportEyebrow: "Desbloquear el banco completo",
       supportVince:
         "Soy Vince. Creé Safety Test Prep para que las herramientas de estudio de seguridad sean más fáciles de usar para trabajadores, personas que buscan empleo y quienes entran a los oficios.",
-      supportOptional: "El pago es opcional. Si no puede aportar ahora, siga estudiando.",
-      supportDoesNot: "El apoyo no compra ",
+      supportOptional: "Protección contra caídas, conocimientos generales de CDL y RCP en adultos siguen gratis si no está listo para pagar.",
+      supportDoesNot: "El pago no compra ",
       supportCashNote:
-        "Cash App: {tag}. Nota: apoyo a Safety Test Prep. La cuenta puede aparecer como Andy Lau hasta que se actualice el nombre.",
+        "Cash App: {tag}. Confirme $safetytestprep y el nombre Safety Test Prep. También se aceptan Bitcoin y USDT (Tron).",
       supportNotLive: "Cash App aún no está activado.",
       supportOshaBody:
-        "Usó preguntas originales sobre temas de OSHA, explicaciones y tarjetas — sin cuenta ni muro de pago. Safety Test Prep es gratis. Si este cuestionario le ayudó a prepararse para el trabajo, una capacitación o un puesto nuevo, un apoyo opcional de $9.99 financia investigación, redacción, revisión y actualizaciones.",
+        "Protección contra caídas es gratis. El resto de este laboratorio OSHA — simulacros, tarjetas y el banco de 808 preguntas — cuesta $9.99 por 30 días en este dispositivo. El pago no compra una tarjeta.",
       supportCdlBody:
-        "Usó preguntas originales de CDL basadas en el manual, con explicaciones — sin cuenta ni muro de pago. Safety Test Prep es gratis. Si este cuestionario le ayudó a prepararse, un apoyo opcional de $9.99 financia investigación, redacción, revisión y actualizaciones.",
+        "Conocimientos generales de CDL es gratis. Frenos de aire, combinación, endosos, tarjetas y el banco completo cuestan $9.99 por 30 días en este dispositivo. El pago no compra una licencia.",
       supportCprBody:
-        "Usó preguntas originales de repaso de RCP/DEA, con explicaciones — sin cuenta ni muro de pago. Safety Test Prep es gratis. Si este cuestionario le ayudó a prepararse, un apoyo opcional de $9.99 financia investigación, redacción, revisión y actualizaciones."
+        "RCP en adultos es gratis. DEA, pediatría, primeros auxilios, tarjetas y el banco de 435 preguntas cuestan $9.99 por 30 días en este dispositivo. El pago no compra una certificación."
     }
   };
 

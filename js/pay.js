@@ -30,10 +30,17 @@ function stpCryptoItems() {
   return items;
 }
 
+function stpCryptoNote(item) {
+  const es = (document.documentElement.lang || "").toLowerCase().indexOf("es") === 0;
+  if (es && item.noteEs) return item.noteEs;
+  return item.note || "";
+}
+
 function stpCryptoHtml() {
   return stpCryptoItems()
     .map(function (item) {
-      const note = item.note ? "<br><em>" + stpEscapeHtml(item.note) + "</em>" : "";
+      const noteText = stpCryptoNote(item);
+      const note = noteText ? "<br><em>" + stpEscapeHtml(noteText) + "</em>" : "";
       return (
         "<p class='crypto-row'><strong>" +
         stpEscapeHtml(item.label) +

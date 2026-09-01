@@ -53,10 +53,13 @@
         fall: "Cuestionario de protección contra caídas",
         gk: "Conocimientos generales CDL",
         adult: "Cuestionario de RCP en adultos",
+        trades: "Oficios",
+        teams: "Para equipos",
+        what: "Qué somos",
         privacy: "Privacidad",
         terms: "Términos",
         disclaimer: "Aviso legal",
-        support: "Mantenga los laboratorios gratis — apoyo opcional",
+        support: "Desbloquear laboratorios — $9.99",
         legal:
           "© 2026 Safety Test Prep. Solo práctica educativa independiente. No se emiten certificaciones, tarjetas, licencias ni credenciales gubernamentales. No estamos afiliados ni respaldados por OSHA, el Departamento de Trabajo de EE. UU., el DMV de California, la American Heart Association, la Cruz Roja Americana ni ninguna agencia gubernamental.",
         copyLabel: "Copie este enlace",
@@ -76,10 +79,13 @@
         fall: "Fall protection quiz",
         gk: "CDL General Knowledge",
         adult: "Adult CPR quiz",
+        trades: "Trades",
+        teams: "For teams",
+        what: "What we are",
         privacy: "Privacy",
         terms: "Terms",
         disclaimer: "Disclaimer",
-        support: "Keep the labs free — optional support",
+        support: "Unlock the full labs — $9.99",
         legal:
           "© 2026 Safety Test Prep. Independent educational practice only. No certifications, cards, licenses, or government credentials are issued. Not affiliated with or endorsed by OSHA, the U.S. Department of Labor, the California DMV, the American Heart Association, the American Red Cross, or any government agency.",
         copyLabel: "Copy this link",
@@ -126,6 +132,11 @@
       base +
       'cpr-aed-practice.html">' +
       copy.cpr +
+      "</a>" +
+      '<a href="' +
+      base +
+      'trades.html">' +
+      copy.trades +
       "</a>" +
       '<a href="' +
       base +
@@ -202,6 +213,22 @@
       b +
       'cpr/adult-cpr.html">' +
       copy.adult +
+      "</a></p>" +
+      '<p class="foot-links">' +
+      '<a href="' +
+      b +
+      'trades.html">' +
+      copy.trades +
+      "</a> · " +
+      '<a href="' +
+      b +
+      'for-teams.html">' +
+      copy.teams +
+      "</a> · " +
+      '<a href="' +
+      b +
+      'what-we-are.html">' +
+      copy.what +
       "</a></p>" +
       '<p class="foot-links">' +
       '<a href="' +
