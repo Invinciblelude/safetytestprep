@@ -1,5 +1,7 @@
 window.STP_SITE = {
-  contactEmail: "safetytestprep@gmail.com"
+  contactEmail: "safetytestprep@gmail.com",
+  tiktok: "https://www.tiktok.com/@safetytestprep",
+  instagram: "https://www.instagram.com/safetytestprep/"
 };
 
 window.STP_PAY = {

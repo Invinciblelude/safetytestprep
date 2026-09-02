@@ -60,10 +60,14 @@
         terms: "Términos",
         disclaimer: "Aviso legal",
         support: "Desbloquear laboratorios — $9.99",
+        tiktok: "TikTok",
+        instagram: "Instagram",
         payBar:
-          "Pague $9.99 primero. Pulse Pagar $safetytestprep para ver los códigos QR, luego pulse Ya pagué. Las muestras gratis siguen disponibles.",
-        payNav: "Pagar $safetytestprep",
-        paidBtn: "Ya pagué — desbloquear 30 días",
+          "Si este material le ayuda a aprender y prepararse, por favor pague. Bancos completos de OSHA, CDL y RCP. Escanee un código. $9.99.",
+        payNav: "Pagar $9.99",
+        payCash: "Pagar Cash App",
+        payBtc: "Pagar Bitcoin",
+        payUsdt: "Pagar USDT",
         legal:
           "© 2026 Safety Test Prep. Solo práctica educativa independiente. No se emiten certificaciones, tarjetas, licencias ni credenciales gubernamentales. No estamos afiliados ni respaldados por OSHA, el Departamento de Trabajo de EE. UU., el DMV de California, la American Heart Association, la Cruz Roja Americana ni ninguna agencia gubernamental.",
         copyLabel: "Copie este enlace",
@@ -90,10 +94,14 @@
         terms: "Terms",
         disclaimer: "Disclaimer",
         support: "Unlock the full labs — $9.99",
+        tiktok: "TikTok",
+        instagram: "Instagram",
         payBar:
-          "Pay $9.99 first. Tap Pay $safetytestprep for the QR codes, then tap I paid. Free sample quizzes stay available.",
-        payNav: "Pay $safetytestprep",
-        paidBtn: "I paid — unlock 30 days",
+          "If this material helps you learn and prepare, please pay. Full OSHA, CDL, and CPR banks. Scan a code. $9.99.",
+        payNav: "Pay $9.99",
+        payCash: "Pay Cash App",
+        payBtc: "Pay Bitcoin",
+        payUsdt: "Pay USDT",
         legal:
           "© 2026 Safety Test Prep. Independent educational practice only. No certifications, cards, licenses, or government credentials are issued. Not affiliated with or endorsed by OSHA, the U.S. Department of Labor, the California DMV, the American Heart Association, the American Red Cross, or any government agency.",
         copyLabel: "Copy this link",
@@ -119,31 +127,6 @@
     ">ES</a>" +
     "</span>";
 
-  var paid = false;
-  try {
-    paid = Date.now() < parseInt(localStorage.getItem("stp-full-until") || "0", 10);
-  } catch (err) {}
-
-  function hidePayUi() {
-    document.querySelectorAll(".stp-pay-bar, [data-stp-pay-first]").forEach(function (el) {
-      el.hidden = true;
-    });
-    var cta = document.querySelector(".nav-cta");
-    if (cta) {
-      cta.className = "btn ghost nav-cta";
-      cta.href = base + "osha/";
-      cta.textContent = copy.start;
-    }
-  }
-
-  function grantFull() {
-    try {
-      localStorage.setItem("stp-full-until", String(Date.now() + 30 * 24 * 60 * 60 * 1000));
-    } catch (err) {}
-    paid = true;
-    hidePayUi();
-  }
-
   function payPage() {
     return isEs ? "/es/support.html" : "/support.html";
   }
@@ -157,34 +140,45 @@
       '<a class="btn" href="' +
       payPage() +
       '#pay">' +
-      copy.payNav +
+      copy.payCash +
       "</a>" +
-      '<button type="button" class="btn ghost" data-stp-paid>' +
-      copy.paidBtn +
-      "</button>" +
+      '<a class="btn" href="' +
+      payPage() +
+      '#pay">' +
+      copy.payBtc +
+      "</a>" +
+      '<a class="btn" href="' +
+      payPage() +
+      '#pay">' +
+      copy.payUsdt +
+      "</a>" +
       "</p>"
     );
   }
 
   function insertPayBar() {
-    if (paid || /support\.html$/.test(path)) return;
-    if (document.querySelector(".stp-pay-bar")) return;
+    if (/support\.html$/.test(path)) return;
+    var existing = document.querySelector(".stp-pay-bar");
+    if (existing) {
+      existing.innerHTML = payBarHtml();
+      existing.hidden = false;
+      return;
+    }
     var bar = document.createElement("aside");
     bar.className = "stp-pay-bar";
     bar.setAttribute("aria-label", copy.payNav);
     bar.innerHTML = payBarHtml();
     var mainEl = document.getElementById("main");
-    var edu = document.querySelector(".edu-bar");
     var topbar = document.querySelector(".topbar");
-    if (nav && mainEl && nav.parentNode === mainEl) mainEl.insertBefore(bar, nav.nextSibling);
+    var wrap = document.querySelector(".app, .wrap");
+    if (topbar && topbar.parentNode) topbar.parentNode.insertBefore(bar, topbar.nextSibling);
+    else if (nav && nav.parentNode && !document.querySelector(".site-header")) nav.parentNode.insertBefore(bar, nav.nextSibling);
     else if (mainEl) mainEl.insertBefore(bar, mainEl.firstChild);
-    else if (edu && edu.parentNode) edu.parentNode.insertBefore(bar, edu.nextSibling);
-    else if (topbar && topbar.parentNode) topbar.parentNode.insertBefore(bar, topbar.nextSibling);
+    else if (wrap) wrap.insertBefore(bar, wrap.firstChild);
+    else document.body.insertBefore(bar, document.body.firstChild);
   }
 
-  var ctaHtml = paid
-    ? '<a class="btn ghost nav-cta" href="' + base + 'osha/">' + copy.start + "</a>"
-    : '<a class="btn nav-cta" href="' + payPage() + '#pay">' + copy.payNav + "</a>";
+  var ctaHtml = '<a class="btn nav-cta" href="' + payPage() + '#pay">' + copy.payNav + "</a>";
 
   if (nav) {
     nav.className = (nav.className + " nav").trim();
@@ -238,12 +232,8 @@
     insertPayBar();
   }
 
-  if (paid) hidePayUi();
-
-  document.addEventListener("click", function (e) {
-    if (!e.target.closest("[data-stp-paid]")) return;
-    e.preventDefault();
-    grantFull();
+  document.querySelectorAll(".stp-pay-bar, [data-stp-pay-first]").forEach(function (el) {
+    el.hidden = false;
   });
 
   if (foot) {
@@ -331,6 +321,13 @@
       b +
       'support.html">' +
       copy.support +
+      "</a></p>" +
+      '<p class="foot-links">' +
+      '<a href="https://www.tiktok.com/@safetytestprep" rel="noopener noreferrer" target="_blank">' +
+      copy.tiktok +
+      "</a> · " +
+      '<a href="https://www.instagram.com/safetytestprep/" rel="noopener noreferrer" target="_blank">' +
+      copy.instagram +
       "</a></p>" +
       "<p>" +
       copy.legal +

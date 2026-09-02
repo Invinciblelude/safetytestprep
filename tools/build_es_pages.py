@@ -896,6 +896,7 @@ def main() -> None:
         [
             '<p class="lede">El correo es la mejor forma de contactarnos por correcciones de contenido, accesibilidad o avisos DMCA. No tomamos preguntas de certificación: no podemos emitir una tarjeta ni una licencia.</p>',
             '<section class="price"><h2>Correo</h2><p><a id="contact-mail" href="mailto:safetytestprep@gmail.com">safetytestprep@gmail.com</a></p><p>Para correcciones de contenido, accesibilidad o avisos de derechos de autor. No podemos emitir tarjetas OSHA, licencias CDL ni certificaciones de RCP.</p></section>',
+            '<section class="price"><h2>TikTok e Instagram</h2><p><a href="https://www.tiktok.com/@safetytestprep" rel="noopener noreferrer" target="_blank">TikTok @safetytestprep</a> · <a href="https://www.instagram.com/safetytestprep/" rel="noopener noreferrer" target="_blank">Instagram @safetytestprep</a></p><p>Cuestionarios de práctica y clips de estudio. Solo estudio independiente — no es una tarjeta ni una licencia.</p></section>',
         ],
         extra_scripts=['<script src="../js/config.js"></script>', '<script src="../js/chrome.js"></script>'],
     )
