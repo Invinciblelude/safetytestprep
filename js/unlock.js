@@ -36,6 +36,9 @@
   function copy() {
     if (es()) {
       return {
+        nowTitle: "Pague $9.99 primero",
+        nowLead:
+          "Escanee el código de Cash App, envíe $9.99 a $safetytestprep, luego pulse Ya pagué. El cuestionario de muestra sigue gratis.",
         title: "Desbloquee el banco completo — $9.99",
         lead:
           "Los cuestionarios de muestra siguen gratis. El banco completo, las tarjetas y los simulacros en este laboratorio cuestan $9.99 por 30 días en este dispositivo. Pague $9.99 en Cash App, o con Bitcoin o USDT. No es una tarjeta, licencia ni certificación.",
@@ -43,12 +46,15 @@
         crypto: "O envíe unos $9.99 en Bitcoin, o $9.99 USDT (solo Tron / TRC-20).",
         paid: "Ya pagué — desbloquear 30 días",
         free: "Seguir con el cuestionario gratis de " + freeLabel(),
-        note: "Cash App: $safetytestprep (nombre: Safety Test Prep). Envíe $9.99, luego pulse “Ya pagué.”",
+        note: "Escanee el código de Cash App. $safetytestprep (nombre: Safety Test Prep). Envíe $9.99, luego pulse “Ya pagué.”",
         close: "Volver",
         days: "Acceso completo en este dispositivo hasta "
       };
     }
     return {
+        nowTitle: "Pay $9.99 first",
+        nowLead:
+          "Scan the Cash App code, send $9.99 to $safetytestprep, then tap I paid. The sample quiz stays free.",
         title: "Unlock the full practice bank — $9.99",
         lead:
           "Sample quizzes stay free. The full question bank, flashcards, and mock exams in this lab are $9.99 for 30 days on this device. Pay $9.99 in Cash App, or with Bitcoin or USDT. This is not a card, license, or certification.",
@@ -56,7 +62,7 @@
         crypto: "Or send about $9.99 in Bitcoin, or $9.99 USDT (Tron / TRC-20 only).",
         paid: "I paid — unlock 30 days",
         free: "Keep the free " + freeLabel() + " quiz",
-        note: "Cash App: $safetytestprep (name: Safety Test Prep). Send $9.99, then tap “I paid.”",
+        note: "Scan the Cash App code. $safetytestprep (name: Safety Test Prep). Send $9.99, then tap “I paid.”",
         close: "Back",
         days: "Full access on this device until "
     };
@@ -98,10 +104,7 @@
   };
 
   function cashHref() {
-    if (typeof stpCashBase === "function") {
-      return stpCashBase() || "";
-    }
-    return "https://cash.app/$safetytestprep";
+    return "";
   }
 
   function ensurePanel() {
@@ -119,8 +122,9 @@
 
   window.stpShowPaywall = function () {
     var c = copy();
-    var href = cashHref();
     var el = ensurePanel();
+    var cashQr =
+      typeof stpCashQrHtml === "function" ? '<div class="stp-paywall-cash">' + stpCashQrHtml() + "</div>" : "";
     var cryptoBlock =
       typeof stpCryptoHtml === "function" && stpCryptoHtml()
         ? '<div class="stp-paywall-crypto"><p class="stp-paywall-note">' + c.crypto + "</p>" + stpCryptoHtml() + "</div>"
@@ -136,11 +140,9 @@
       '<p class="stp-paywall-note">' +
       c.note +
       "</p>" +
+      cashQr +
       '<p class="btns">' +
-      (href
-        ? '<a class="btn" href="' + href + '" target="_blank" rel="noopener">' + c.pay + "</a>"
-        : "") +
-      '<button type="button" class="btn ghost" data-stp-paid>' +
+      '<button type="button" class="btn" data-stp-paid>' +
       c.paid +
       "</button>" +
       "</p>" +
@@ -171,6 +173,9 @@
       var mode = btn.getAttribute("data-mode");
       if (open || window.stpModeIsFree(mode)) btn.classList.remove("is-locked");
       else btn.classList.add("is-locked");
+    });
+    document.querySelectorAll(".stp-pay-bar, [data-stp-pay-first]").forEach(function (el) {
+      el.hidden = open;
     });
     var note = document.getElementById("stp-unlock-status");
     if (!note) return;

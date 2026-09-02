@@ -60,6 +60,12 @@
         terms: "Términos",
         disclaimer: "Aviso legal",
         support: "Desbloquear laboratorios — $9.99",
+        payBar:
+          "Pague $9.99 primero para desbloquear los bancos completos de OSHA, CDL y RCP por 30 días. Luego pulse Ya pagué. Las muestras gratis siguen disponibles.",
+        payNav: "Pagar $9.99",
+        payScan: "Escanee el código de Cash App. $safetytestprep · Envíe $9.99. Nombre: Safety Test Prep.",
+        paidBtn: "Ya pagué — desbloquear 30 días",
+        payCrypto: "Bitcoin o USDT",
         legal:
           "© 2026 Safety Test Prep. Solo práctica educativa independiente. No se emiten certificaciones, tarjetas, licencias ni credenciales gubernamentales. No estamos afiliados ni respaldados por OSHA, el Departamento de Trabajo de EE. UU., el DMV de California, la American Heart Association, la Cruz Roja Americana ni ninguna agencia gubernamental.",
         copyLabel: "Copie este enlace",
@@ -86,6 +92,12 @@
         terms: "Terms",
         disclaimer: "Disclaimer",
         support: "Unlock the full labs — $9.99",
+        payBar:
+          "Pay $9.99 first to unlock the full OSHA, CDL, and CPR banks for 30 days. Then tap I paid. Free sample quizzes stay available.",
+        payNav: "Pay $9.99",
+        payScan: "Scan the Cash App code. $safetytestprep · Send $9.99. Name: Safety Test Prep.",
+        paidBtn: "I paid — unlock 30 days",
+        payCrypto: "Bitcoin or USDT",
         legal:
           "© 2026 Safety Test Prep. Independent educational practice only. No certifications, cards, licenses, or government credentials are issued. Not affiliated with or endorsed by OSHA, the U.S. Department of Labor, the California DMV, the American Heart Association, the American Red Cross, or any government agency.",
         copyLabel: "Copy this link",
@@ -110,6 +122,79 @@
     (isEs ? ' aria-current="true"' : "") +
     ">ES</a>" +
     "</span>";
+
+  var paid = false;
+  try {
+    paid = Date.now() < parseInt(localStorage.getItem("stp-full-until") || "0", 10);
+  } catch (err) {}
+
+  function hidePayUi() {
+    document.querySelectorAll(".stp-pay-bar, [data-stp-pay-first]").forEach(function (el) {
+      el.hidden = true;
+    });
+    var cta = document.querySelector(".nav-cta");
+    if (cta) {
+      cta.className = "btn ghost nav-cta";
+      cta.href = base + "osha/";
+      cta.textContent = copy.start;
+    }
+  }
+
+  function grantFull() {
+    try {
+      localStorage.setItem("stp-full-until", String(Date.now() + 30 * 24 * 60 * 60 * 1000));
+    } catch (err) {}
+    paid = true;
+    hidePayUi();
+  }
+
+  function payPage() {
+    return isEs ? "/es/support.html" : "/support.html";
+  }
+
+  function payBarHtml() {
+    return (
+      "<p><strong>" +
+      copy.payBar +
+      "</strong></p>" +
+      '<div class="stp-pay-bar-qr">' +
+      '<img src="/img/qr-cashapp.png" width="168" height="168" alt="Cash App $safetytestprep">' +
+      "<p>" +
+      copy.payScan +
+      "</p>" +
+      "</div>" +
+      '<p class="btns">' +
+      '<button type="button" class="btn" data-stp-paid>' +
+      copy.paidBtn +
+      "</button>" +
+      '<a class="btn ghost" href="' +
+      payPage() +
+      '#cash">' +
+      copy.payCrypto +
+      "</a>" +
+      "</p>"
+    );
+  }
+
+  function insertPayBar() {
+    if (paid || /support\.html$/.test(path)) return;
+    if (document.querySelector(".stp-pay-bar")) return;
+    var bar = document.createElement("aside");
+    bar.className = "stp-pay-bar";
+    bar.setAttribute("aria-label", copy.payNav);
+    bar.innerHTML = payBarHtml();
+    var mainEl = document.getElementById("main");
+    var edu = document.querySelector(".edu-bar");
+    var topbar = document.querySelector(".topbar");
+    if (nav && mainEl && nav.parentNode === mainEl) mainEl.insertBefore(bar, nav.nextSibling);
+    else if (mainEl) mainEl.insertBefore(bar, mainEl.firstChild);
+    else if (edu && edu.parentNode) edu.parentNode.insertBefore(bar, edu.nextSibling);
+    else if (topbar && topbar.parentNode) topbar.parentNode.insertBefore(bar, topbar.nextSibling);
+  }
+
+  var ctaHtml = paid
+    ? '<a class="btn ghost nav-cta" href="' + base + 'osha/">' + copy.start + "</a>"
+    : '<a class="btn nav-cta" href="' + payPage() + '#cash">' + copy.payNav + "</a>";
 
   if (nav) {
     nav.className = (nav.className + " nav").trim();
@@ -150,11 +235,8 @@
       "</a>" +
       "</span>" +
       langSwitch +
-      '<a class="btn ghost nav-cta" href="' +
-      base +
-      'osha/">' +
-      copy.start +
-      "</a>";
+      ctaHtml;
+    insertPayBar();
   } else {
     var first = document.querySelector(".topbar > div");
     if (first) {
@@ -163,7 +245,16 @@
       wrap.innerHTML = langSwitch;
       first.appendChild(wrap);
     }
+    insertPayBar();
   }
+
+  if (paid) hidePayUi();
+
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest("[data-stp-paid]")) return;
+    e.preventDefault();
+    grantFull();
+  });
 
   if (foot) {
     if (foot.className.indexOf("legal-foot") === -1) foot.className = (foot.className + " legal-foot").trim();

@@ -1,12 +1,20 @@
+function stpIsEs() {
+  return (document.documentElement.lang || "").toLowerCase().indexOf("es") === 0;
+}
+
+function stpPayPage() {
+  return stpIsEs() ? "/es/support.html" : "/support.html";
+}
+
+function stpCashTag() {
+  let s = String((window.STP_PAY && window.STP_PAY.cashapp) || "$safetytestprep").trim();
+  if (!s) return "$safetytestprep";
+  if (s.charAt(0) !== "$") s = "$" + s;
+  return s;
+}
+
 function stpCashBase() {
-  const cfg = window.STP_PAY || {};
-  let s = String(cfg.cashapp || "").trim();
-  if (!s) return "";
-  if (s.indexOf("http") !== 0) {
-    if (s.charAt(0) !== "$") s = "$" + s;
-    s = "https://cash.app/" + s;
-  }
-  return s.replace(/\/$/, "");
+  return "";
 }
 
 function stpEscapeHtml(s) {
@@ -14,6 +22,35 @@ function stpEscapeHtml(s) {
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/"/g, "&quot;");
+}
+
+function stpCashQrHtml() {
+  const cfg = window.STP_PAY || {};
+  const qr = cfg.cashQr || "/img/qr-cashapp.png";
+  const tag = stpCashTag();
+  const scan = stpIsEs() ? "Escanee con Cash App" : "Scan with Cash App";
+  const note = stpIsEs()
+    ? "Confirme $safetytestprep y el nombre Safety Test Prep. Envíe $9.99."
+    : "Confirm $safetytestprep and the name Safety Test Prep. Send $9.99.";
+  return (
+    "<div class='crypto-row cash-qr-row' id='cash'>" +
+    "<img class='crypto-qr' src='" +
+    stpEscapeHtml(qr) +
+    "' width='180' height='180' alt='Cash App " +
+    stpEscapeHtml(tag) +
+    "'>" +
+    "<div class='crypto-meta'><p class='crypto-scan'>" +
+    stpEscapeHtml(scan) +
+    "</p><strong>Cash App</strong><br><code>" +
+    stpEscapeHtml(tag) +
+    "</code> <button type='button' class='tip-copy' data-copy='" +
+    stpEscapeHtml(tag) +
+    "'>" +
+    (window.stpT ? window.stpT("copy") : "Copy") +
+    "</button><em>" +
+    note +
+    "</em></div></div>"
+  );
 }
 
 function stpCryptoItems() {
@@ -31,18 +68,29 @@ function stpCryptoItems() {
 }
 
 function stpCryptoNote(item) {
-  const es = (document.documentElement.lang || "").toLowerCase().indexOf("es") === 0;
-  if (es && item.noteEs) return item.noteEs;
+  if (stpIsEs() && item.noteEs) return item.noteEs;
   return item.note || "";
 }
 
 function stpCryptoHtml() {
+  const scan = window.stpT ? window.stpT("scanQr") : "Scan with your wallet";
   return stpCryptoItems()
     .map(function (item) {
       const noteText = stpCryptoNote(item);
-      const note = noteText ? "<br><em>" + stpEscapeHtml(noteText) + "</em>" : "";
+      const note = noteText ? "<em>" + stpEscapeHtml(noteText) + "</em>" : "";
+      const qr = item.qr
+        ? "<img class='crypto-qr' src='" +
+          stpEscapeHtml(item.qr) +
+          "' width='180' height='180' alt='" +
+          stpEscapeHtml(item.label) +
+          " QR'>"
+        : "";
       return (
-        "<p class='crypto-row'><strong>" +
+        "<div class='crypto-row'>" +
+        qr +
+        "<div class='crypto-meta'><p class='crypto-scan'>" +
+        stpEscapeHtml(scan) +
+        "</p><strong>" +
         stpEscapeHtml(item.label) +
         "</strong><br><code>" +
         stpEscapeHtml(item.address) +
@@ -52,7 +100,7 @@ function stpCryptoHtml() {
         (window.stpT ? window.stpT("copy") : "Copy") +
         "</button>" +
         note +
-        "</p>"
+        "</div></div>"
       );
     })
     .join("");
@@ -84,30 +132,23 @@ function stpBindCopy(root) {
 
 function stpWirePay() {
   const cfg = window.STP_PAY || {};
-  const base = stpCashBase();
+  const payPage = stpPayPage();
   document.querySelectorAll("[data-cash]").forEach(function (a) {
-    const amt = a.getAttribute("data-cash");
-    if (!base) {
-      a.classList.add("disabled");
-      a.removeAttribute("href");
-      return;
-    }
     a.classList.remove("disabled");
-    a.href = base;
-    a.target = "_blank";
-    a.rel = "noopener";
+    a.href = payPage + "#cash";
+    a.removeAttribute("target");
+    a.removeAttribute("rel");
   });
   const warn = document.getElementById("pay-warn");
-  if (warn) warn.hidden = Boolean(base);
+  if (warn) warn.hidden = true;
   const cashLine = document.getElementById("cash-line");
   if (cashLine) {
-    let tag = String(cfg.cashapp || "").trim();
-    if (base && tag && tag.indexOf("http") !== 0) {
-      if (tag.charAt(0) !== "$") tag = "$" + tag;
-      cashLine.innerHTML = "Cash App: <a href='" + base + "' target='_blank' rel='noopener'>" + stpEscapeHtml(tag) + "</a>";
-    } else {
-      cashLine.textContent = "";
-    }
+    cashLine.innerHTML = "Cash App: <strong>" + stpEscapeHtml(stpCashTag()) + "</strong>";
+  }
+  const cashQr = document.getElementById("cash-qr");
+  if (cashQr) {
+    cashQr.innerHTML = stpCashQrHtml();
+    stpBindCopy(cashQr);
   }
   const crypto = document.getElementById("crypto-line");
   if (crypto) {

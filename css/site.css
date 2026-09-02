@@ -93,6 +93,52 @@ a:focus-visible, button:focus-visible {
   font-size: 14px;
   margin-bottom: 22px;
 }
+.stp-pay-bar {
+  background: var(--accent);
+  color: var(--on-accent);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin: 0 0 22px;
+}
+.stp-pay-bar p { margin: 0; color: inherit; font-size: 15px; }
+.stp-pay-bar .btns { margin-top: 12px; }
+.stp-pay-bar-qr {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  margin-top: 14px;
+}
+.stp-pay-bar-qr img {
+  width: 168px;
+  height: 168px;
+  background: #fff;
+  border: 8px solid #fff;
+  border-radius: 10px;
+  flex: 0 0 168px;
+}
+.stp-pay-bar-qr p {
+  margin: 0;
+  max-width: 320px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.stp-pay-bar .btn {
+  background: #fff;
+  color: var(--accent);
+  border-color: transparent;
+  cursor: pointer;
+  font: inherit;
+}
+.stp-pay-bar .btn.ghost {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+}
+.stp-pay-bar .btn.ghost:hover {
+  color: #fff;
+  border-color: #fff;
+}
 .eyebrow { margin: 0; letter-spacing: 0.08em; text-transform: uppercase; font-size: 11px; color: var(--accent); font-weight: 700; }
 h1 { font-size: 40px; margin: 8px 0 0; letter-spacing: -0.04em; line-height: 1.15; color: var(--ink); }
 h2 { font-size: 28px; letter-spacing: -0.03em; margin: 0 0 10px; }
@@ -150,8 +196,34 @@ footer p { margin: 0 0 10px; max-width: 720px; }
   max-width: 720px;
 }
 code { font-size: 12px; color: var(--accent); word-break: break-all; }
-.crypto-row { margin: 10px 0 0; font-size: 13px; color: var(--muted); }
-.crypto-row em { display: inline-block; margin-top: 4px; color: var(--ink); }
+.crypto-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-start;
+  margin: 16px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+.crypto-row em { display: block; margin-top: 6px; color: var(--ink); }
+.crypto-qr {
+  width: 180px;
+  height: 180px;
+  background: #fff;
+  border: 8px solid #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px var(--line);
+  flex: 0 0 180px;
+}
+.crypto-meta { flex: 1 1 200px; min-width: 0; }
+.crypto-scan {
+  margin: 0 0 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
 .tip-copy {
   border: 1px solid var(--line);
   background: var(--panel);

@@ -35,28 +35,23 @@ window.SUPPORT_CONFIG = {
   }
 
   function hrefFor(amount) {
-    const base = cashappBase();
-    if (!base) return "";
-    return base + "/" + amount;
+    return "";
   }
 
   function render(el, variant) {
     if (!el) return;
     const c = window.SUPPORT_CONFIG || {};
-    const live = Boolean(cashappBase());
+    const live = Boolean(tagLabel());
     const href = hrefFor("9.99") || hrefFor("10");
     const tag = tagLabel();
     const cred = (window.STP_LANG === "es" && c.credentialEs) ? c.credentialEs : (c.credential || "a credential");
     const body = t(c.bodyKey || "supportCprBody");
     const cashLabel = t("supportCash");
     const needsUnlock = window.stpShowPaywall && !(window.stpHasFullAccess && window.stpHasFullAccess());
+    const payPage = (document.documentElement.lang || "").toLowerCase().indexOf("es") === 0 ? "/es/support.html" : "/support.html";
     const payBlock = needsUnlock
       ? "<div class='support-amounts'><button type='button' class='tip-btn' data-stp-unlock>" + t("unlockCta") + "</button></div>"
-      : "<div class='support-amounts'>" +
-        (href
-          ? "<a class='tip-btn' href='" + href + "' target='_blank' rel='noopener'>" + cashLabel + "</a>"
-          : "<span class='tip-btn disabled'>" + cashLabel + "</span>") +
-        "</div>";
+      : "<div class='support-amounts'><a class='tip-btn' href='" + payPage + "#cash'>" + cashLabel + "</a></div>";
 
     if (variant === "home") {
       el.innerHTML =
@@ -64,8 +59,8 @@ window.SUPPORT_CONFIG = {
       return;
     }
 
-    const cashNote = tag && href
-      ? "<p class='tip-other'>" + t("supportCashNote").replace("{tag}", "<a href='" + cashappBase() + "' target='_blank' rel='noopener'>" + tag + "</a>") + "</p>"
+    const cashNote = tag
+      ? "<p class='tip-other'>" + t("supportCashNote").replace("{tag}", "<strong>" + tag + "</strong>") + "</p>"
       : "";
 
     el.innerHTML =

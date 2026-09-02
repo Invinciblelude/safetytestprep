@@ -151,6 +151,8 @@ select { max-width: 100%; }
   padding: 12px 20px;
   cursor: pointer;
   font: inherit;
+  text-decoration: none;
+  display: inline-block;
 }
 .start-side {
   background: var(--panel);
@@ -193,8 +195,33 @@ select { max-width: 100%; }
 }
 .tip-btn.disabled span { color: var(--muted); }
 .tip-other { font-size: 13px; }
-.crypto-row { margin: 10px 0 0; }
+.crypto-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-start;
+  margin: 14px 0 0;
+}
 .crypto-row code { word-break: break-all; }
+.crypto-qr {
+  width: 180px;
+  height: 180px;
+  background: #fff;
+  border: 8px solid #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px var(--line);
+  flex: 0 0 180px;
+}
+.crypto-meta { flex: 1 1 180px; min-width: 0; }
+.crypto-scan {
+  margin: 0 0 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.crypto-row em { display: block; margin-top: 6px; }
 .tip-copy {
   border: 1px solid var(--line);
   background: var(--panel);
@@ -262,16 +289,68 @@ button.start.is-locked span.kicker::after {
 }
 .stp-paywall-card h2 { margin: 0 0 10px; font-size: 24px; }
 .stp-paywall-card p { color: var(--muted); }
+.stp-paywall-cash { margin: 14px 0; }
 .stp-paywall-crypto {
   margin: 16px 0 0;
   padding-top: 12px;
   border-top: 1px solid var(--line);
 }
 .stp-paywall-crypto .crypto-row { color: var(--muted); font-size: 14px; }
-.stp-paywall-crypto em { display: inline-block; margin-top: 4px; color: var(--ink); }
+.stp-paywall-crypto em { display: block; margin-top: 6px; color: var(--ink); }
 .stp-unlock-status {
   color: var(--good);
   font-size: 14px;
   font-weight: 600;
   margin: 8px 0 0;
+}
+.stp-pay-bar {
+  background: var(--accent);
+  color: var(--on-accent);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin: 0 0 18px;
+}
+.stp-pay-bar p { margin: 0; color: inherit; font-size: 15px; }
+.stp-pay-bar .btns { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.stp-pay-bar-qr {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  margin-top: 14px;
+}
+.stp-pay-bar-qr img {
+  width: 168px;
+  height: 168px;
+  background: #fff;
+  border: 8px solid #fff;
+  border-radius: 10px;
+  flex: 0 0 168px;
+}
+.stp-pay-bar-qr p {
+  margin: 0;
+  max-width: 320px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.stp-pay-bar .btn {
+  display: inline-block;
+  background: #fff;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 800;
+  border: 0;
+  border-radius: 8px;
+  padding: 12px 18px;
+  cursor: pointer;
+  font: inherit;
+}
+.stp-pay-bar .btn.ghost {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+}
+.stp-pay-bar .btn.ghost:hover {
+  color: #fff;
+  border-color: #fff;
 }
