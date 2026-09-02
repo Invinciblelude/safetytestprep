@@ -61,11 +61,9 @@
         disclaimer: "Aviso legal",
         support: "Desbloquear laboratorios — $9.99",
         payBar:
-          "Pague $9.99 primero para desbloquear los bancos completos de OSHA, CDL y RCP por 30 días. Luego pulse Ya pagué. Las muestras gratis siguen disponibles.",
-        payNav: "Pagar $9.99",
-        payScan: "Escanee el código de Cash App. $safetytestprep · Envíe $9.99. Nombre: Safety Test Prep.",
+          "Pague $9.99 primero. Pulse Pagar $safetytestprep para ver los códigos QR, luego pulse Ya pagué. Las muestras gratis siguen disponibles.",
+        payNav: "Pagar $safetytestprep",
         paidBtn: "Ya pagué — desbloquear 30 días",
-        payCrypto: "Bitcoin o USDT",
         legal:
           "© 2026 Safety Test Prep. Solo práctica educativa independiente. No se emiten certificaciones, tarjetas, licencias ni credenciales gubernamentales. No estamos afiliados ni respaldados por OSHA, el Departamento de Trabajo de EE. UU., el DMV de California, la American Heart Association, la Cruz Roja Americana ni ninguna agencia gubernamental.",
         copyLabel: "Copie este enlace",
@@ -93,11 +91,9 @@
         disclaimer: "Disclaimer",
         support: "Unlock the full labs — $9.99",
         payBar:
-          "Pay $9.99 first to unlock the full OSHA, CDL, and CPR banks for 30 days. Then tap I paid. Free sample quizzes stay available.",
-        payNav: "Pay $9.99",
-        payScan: "Scan the Cash App code. $safetytestprep · Send $9.99. Name: Safety Test Prep.",
+          "Pay $9.99 first. Tap Pay $safetytestprep for the QR codes, then tap I paid. Free sample quizzes stay available.",
+        payNav: "Pay $safetytestprep",
         paidBtn: "I paid — unlock 30 days",
-        payCrypto: "Bitcoin or USDT",
         legal:
           "© 2026 Safety Test Prep. Independent educational practice only. No certifications, cards, licenses, or government credentials are issued. Not affiliated with or endorsed by OSHA, the U.S. Department of Labor, the California DMV, the American Heart Association, the American Red Cross, or any government agency.",
         copyLabel: "Copy this link",
@@ -157,21 +153,15 @@
       "<p><strong>" +
       copy.payBar +
       "</strong></p>" +
-      '<div class="stp-pay-bar-qr">' +
-      '<img src="/img/qr-cashapp.png" width="168" height="168" alt="Cash App $safetytestprep">' +
-      "<p>" +
-      copy.payScan +
-      "</p>" +
-      "</div>" +
       '<p class="btns">' +
-      '<button type="button" class="btn" data-stp-paid>' +
+      '<a class="btn" href="' +
+      payPage() +
+      '#pay">' +
+      copy.payNav +
+      "</a>" +
+      '<button type="button" class="btn ghost" data-stp-paid>' +
       copy.paidBtn +
       "</button>" +
-      '<a class="btn ghost" href="' +
-      payPage() +
-      '#cash">' +
-      copy.payCrypto +
-      "</a>" +
       "</p>"
     );
   }
@@ -194,7 +184,7 @@
 
   var ctaHtml = paid
     ? '<a class="btn ghost nav-cta" href="' + base + 'osha/">' + copy.start + "</a>"
-    : '<a class="btn nav-cta" href="' + payPage() + '#cash">' + copy.payNav + "</a>";
+    : '<a class="btn nav-cta" href="' + payPage() + '#pay">' + copy.payNav + "</a>";
 
   if (nav) {
     nav.className = (nav.className + " nav").trim();

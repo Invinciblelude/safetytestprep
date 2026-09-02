@@ -51,7 +51,7 @@ window.SUPPORT_CONFIG = {
     const payPage = (document.documentElement.lang || "").toLowerCase().indexOf("es") === 0 ? "/es/support.html" : "/support.html";
     const payBlock = needsUnlock
       ? "<div class='support-amounts'><button type='button' class='tip-btn' data-stp-unlock>" + t("unlockCta") + "</button></div>"
-      : "<div class='support-amounts'><a class='tip-btn' href='" + payPage + "#cash'>" + cashLabel + "</a></div>";
+      : "<div class='support-amounts'><a class='tip-btn' href='" + payPage + "#pay'>" + cashLabel + "</a></div>";
 
     if (variant === "home") {
       el.innerHTML =

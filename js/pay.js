@@ -3,7 +3,7 @@ function stpIsEs() {
 }
 
 function stpPayPage() {
-  return stpIsEs() ? "/es/support.html" : "/support.html";
+  return stpIsEs() ? "/es/support.html#pay" : "/support.html#pay";
 }
 
 function stpCashTag() {
@@ -135,7 +135,7 @@ function stpWirePay() {
   const payPage = stpPayPage();
   document.querySelectorAll("[data-cash]").forEach(function (a) {
     a.classList.remove("disabled");
-    a.href = payPage + "#cash";
+    a.href = payPage;
     a.removeAttribute("target");
     a.removeAttribute("rel");
   });
