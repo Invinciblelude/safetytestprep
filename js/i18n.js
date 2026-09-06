@@ -42,11 +42,11 @@
         "Cash App: {tag}. Confirm $safetytestprep and the name Safety Test Prep. Send $9.99. Bitcoin and USDT (Tron) are also accepted.",
       supportNotLive: "Cash App is not enabled yet.",
       supportOshaBody:
-        "Fall protection is free. The rest of this OSHA lab — mocks, flashcards, and the 808-question bank — is $9.99 for 30 days on this device. Payment does not buy a card.",
+        "Fall protection is free. The rest of this OSHA lab — mocks, flashcards, and the 808-question bank — is $9.99. Pay, then use the password on the pay page. That unlocks 30 days on this device. Payment does not buy a card.",
       supportCdlBody:
-        "CDL General Knowledge is free. Air Brakes, Combination, endorsements, flashcards, and the full bank are $9.99 for 30 days on this device. Payment does not buy a license.",
+        "CDL General Knowledge is free. Air Brakes, Combination, endorsements, flashcards, and the full bank are $9.99. Pay, then use the password on the pay page. That unlocks 30 days on this device. Payment does not buy a license.",
       supportCprBody:
-        "Adult CPR is free. AED, pediatric, first aid, flashcards, and the 435-question bank are $9.99 for 30 days on this device. Payment does not buy a certification."
+        "Adult CPR is free. AED, pediatric, first aid, flashcards, and the 435-question bank are $9.99. Pay, then use the password on the pay page. That unlocks 30 days on this device. Payment does not buy a certification."
     },
     es: {
       question: "Pregunta",
@@ -87,11 +87,11 @@
         "Cash App: {tag}. Confirme $safetytestprep y el nombre Safety Test Prep. Envíe $9.99. También se aceptan Bitcoin y USDT (Tron).",
       supportNotLive: "Cash App aún no está activado.",
       supportOshaBody:
-        "Protección contra caídas es gratis. El resto de este laboratorio OSHA — simulacros, tarjetas y el banco de 808 preguntas — cuesta $9.99 por 30 días en este dispositivo. El pago no compra una tarjeta.",
+        "Protección contra caídas es gratis. El resto de este laboratorio OSHA — simulacros, tarjetas y el banco de 808 preguntas — cuesta $9.99. Pague y use la contraseña de la página de pago. Eso abre 30 días en este dispositivo. El pago no compra una tarjeta.",
       supportCdlBody:
-        "Conocimientos generales de CDL es gratis. Frenos de aire, combinación, endosos, tarjetas y el banco completo cuestan $9.99 por 30 días en este dispositivo. El pago no compra una licencia.",
+        "Conocimientos generales de CDL es gratis. Frenos de aire, combinación, endosos, tarjetas y el banco completo cuestan $9.99. Pague y use la contraseña de la página de pago. Eso abre 30 días en este dispositivo. El pago no compra una licencia.",
       supportCprBody:
-        "RCP en adultos es gratis. DEA, pediatría, primeros auxilios, tarjetas y el banco de 435 preguntas cuestan $9.99 por 30 días en este dispositivo. El pago no compra una certificación."
+        "RCP en adultos es gratis. DEA, pediatría, primeros auxilios, tarjetas y el banco de 435 preguntas cuestan $9.99. Pague y use la contraseña de la página de pago. Eso abre 30 días en este dispositivo. El pago no compra una certificación."
     }
   };
 

@@ -63,11 +63,12 @@
         tiktok: "TikTok",
         instagram: "Instagram",
         payBar:
-          "Si este material le ayuda a aprender y prepararse, por favor pague. Bancos completos de OSHA, CDL y RCP. Escanee un código. $9.99.",
+          "Pague $9.99. La contraseña está en la página de pago. Con eso se abren los bancos de OSHA, CDL y RCP.",
         payNav: "Pagar $9.99",
         payCash: "Pagar Cash App",
         payBtc: "Pagar Bitcoin",
         payUsdt: "Pagar USDT",
+        payPass: "Ver la contraseña",
         legal:
           "© 2026 Safety Test Prep. Solo práctica educativa independiente. No se emiten certificaciones, tarjetas, licencias ni credenciales gubernamentales. No estamos afiliados ni respaldados por OSHA, el Departamento de Trabajo de EE. UU., el DMV de California, la American Heart Association, la Cruz Roja Americana ni ninguna agencia gubernamental.",
         copyLabel: "Copie este enlace",
@@ -97,11 +98,12 @@
         tiktok: "TikTok",
         instagram: "Instagram",
         payBar:
-          "If this material helps you learn and prepare, please pay. Full OSHA, CDL, and CPR banks. Scan a code. $9.99.",
+          "Pay $9.99. The password is on the pay page. That unlocks the full OSHA, CDL, and CPR banks.",
         payNav: "Pay $9.99",
         payCash: "Pay Cash App",
         payBtc: "Pay Bitcoin",
         payUsdt: "Pay USDT",
+        payPass: "Show the password",
         legal:
           "© 2026 Safety Test Prep. Independent educational practice only. No certifications, cards, licenses, or government credentials are issued. Not affiliated with or endorsed by OSHA, the U.S. Department of Labor, the California DMV, the American Heart Association, the American Red Cross, or any government agency.",
         copyLabel: "Copy this link",
@@ -151,6 +153,11 @@
       payPage() +
       '#pay">' +
       copy.payUsdt +
+      "</a>" +
+      '<a class="btn ghost" href="' +
+      payPage() +
+      '#code">' +
+      copy.payPass +
       "</a>" +
       "</p>"
     );

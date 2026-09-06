@@ -129,11 +129,68 @@ a:focus-visible, button:focus-visible {
   font-size: 14px;
   margin-bottom: 22px;
 }
-#pay { scroll-margin-top: 16px; }
+#pay, #code { scroll-margin-top: 16px; }
+.stp-pass-form {
+  margin-top: 16px;
+}
+.stp-pass-form label {
+  display: block;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+.stp-pass-form input[type="text"],
+.stp-pass-form input[type="password"] {
+  width: 100%;
+  max-width: 360px;
+  padding: 10px 12px;
+  font: inherit;
+  font-size: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--ink);
+}
+.stp-pass-err { color: var(--bad); font-size: 14px; margin: 8px 0 0; }
+.stp-pass-show {
+  margin: 16px 0;
+  padding: 14px 16px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.stp-pass-show p { margin: 0 0 8px; }
+.stp-pass-show p:last-child { margin: 0; }
+.stp-pass-show code {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
 .eyebrow { margin: 0; letter-spacing: 0.08em; text-transform: uppercase; font-size: 11px; color: var(--accent); font-weight: 700; }
 h1 { font-size: 40px; margin: 8px 0 0; letter-spacing: -0.04em; line-height: 1.15; color: var(--ink); }
 h2 { font-size: 28px; letter-spacing: -0.03em; margin: 0 0 10px; }
 .lede { color: var(--muted); max-width: 640px; font-size: 18px; }
+.fact-box {
+  margin: 20px 0 24px;
+  padding: 16px 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: 10px;
+  max-width: 720px;
+  box-shadow: var(--shadow);
+}
+.fact-box-kicker {
+  margin: 0 0 6px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.fact-box p { margin: 0; color: var(--ink); font-size: 16px; line-height: 1.5; }
+.study-block h2 { margin-top: 8px; }
+.study-block p, .study-block li { color: var(--muted); font-size: 16px; }
+.study-block p { max-width: 720px; }
 .promise { color: var(--ink); max-width: 640px; }
 .trust { color: var(--muted); font-size: 14px; max-width: 640px; margin-top: 16px; }
 .reviewed { color: var(--muted); font-size: 13px; }
