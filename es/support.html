@@ -32,6 +32,8 @@
       <p>Soy Vince. Protección contra caídas, conocimientos generales de CDL y RCP en adultos siguen gratis. El resto se desbloquea después de pagar y usar la contraseña de abajo.</p>
       <p id="pay-warn">Cash App aún no está activado.</p>
       <p>Escanee cualquier código. El nombre de Cash App debe ser <strong>Safety Test Prep</strong>. Envíe <strong>$9.99</strong>.</p>
+      <p id="stp-src" hidden>¿Viene de un video? Ponga esta palabra en la nota de Cash App para saber cuál: <strong><code id="stp-src-word"></code></strong></p>
+      <script>(function(){try{var s=new URLSearchParams(location.search).get('src')||'';s=s.replace(/[^A-Za-z0-9_-]/g,'').slice(0,16).toUpperCase();if(s){document.getElementById('stp-src-word').textContent=s;document.getElementById('stp-src').hidden=false;localStorage.setItem('stp-src',s);}else{var k=localStorage.getItem('stp-src');if(k){document.getElementById('stp-src-word').textContent=k;document.getElementById('stp-src').hidden=false;}}}catch(e){}})();</script>
       <div id="cash-qr"></div>
       <div id="crypto-line"></div>
     </section>

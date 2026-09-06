@@ -18,6 +18,8 @@
       <p>I’m Vince. Fall protection, CDL General Knowledge, and Adult CPR stay free. Everything else in the labs unlocks after you pay and use the password below.</p>
       <p id="pay-warn">Cash App is not enabled yet.</p>
       <p>Scan any code below. Cash App name should read <strong>Safety Test Prep</strong>. Send <strong>$9.99</strong>.</p>
+      <p id="stp-src" hidden>Came from a video? Put this word in the Cash App note so we know which one: <strong><code id="stp-src-word"></code></strong></p>
+      <script>(function(){try{var s=new URLSearchParams(location.search).get('src')||'';s=s.replace(/[^A-Za-z0-9_-]/g,'').slice(0,16).toUpperCase();if(s){document.getElementById('stp-src-word').textContent=s;document.getElementById('stp-src').hidden=false;localStorage.setItem('stp-src',s);}else{var k=localStorage.getItem('stp-src');if(k){document.getElementById('stp-src-word').textContent=k;document.getElementById('stp-src').hidden=false;}}}catch(e){}})();</script>
       <div id="cash-qr"></div>
       <div id="crypto-line"></div>
     </section>
