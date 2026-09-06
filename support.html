@@ -4,23 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Unlock the full labs — $9.99 | Safety Test Prep</title>
-  <meta name="description" content="Unlock the full OSHA, CDL, and CPR practice banks for $9.99 for 30 days. Pay with Cash App, Bitcoin, or USDT. Sample quizzes stay free." />
+  <meta name="description" content="Pay $9.99, then use the password on this page to unlock the full OSHA, CDL, and CPR practice banks for 30 days. Sample quizzes stay free." />
   <link rel="canonical" href="https://safetytestprep.com/support.html" />
   <link rel="stylesheet" href="css/site.css" />
 </head>
 <body>
   <div class="wrap">
     <nav data-stp-nav></nav>
-    <h1>Pay $safetytestprep</h1>
-    <p class="lede">If this material helps you learn and prepare, please pay $9.99. The full OSHA, CDL, and CPR banks are $9.99 for 30 days on this device. Pay with Cash App, Bitcoin, or USDT. Payment does not purchase a card, license, or exam result.</p>
+    <h1>Pay $9.99, then use the password</h1>
+    <p class="lede">Pay $9.99. The password is on this page. That unlocks the OSHA, CDL, and CPR banks for 30 days on this device. Sample quizzes stay free. Payment does not purchase a card, license, or exam result.</p>
     <section class="price" id="pay">
-      <h2>Pay $safetytestprep — $9.99</h2>
-      <p>I’m Vince. Fall protection, CDL General Knowledge, and Adult CPR stay free. Everything else in the labs unlocks for 30 days after you pay.</p>
+      <h2>Step 1 — Pay $9.99</h2>
+      <p>I’m Vince. Fall protection, CDL General Knowledge, and Adult CPR stay free. Everything else in the labs unlocks after you pay and use the password below.</p>
       <p id="pay-warn">Cash App is not enabled yet.</p>
       <p>Scan any code below. Cash App name should read <strong>Safety Test Prep</strong>. Send <strong>$9.99</strong>.</p>
       <div id="cash-qr"></div>
       <div id="crypto-line"></div>
+    </section>
+    <section class="price" id="code">
+      <h2>Step 2 — Your password</h2>
+      <p>After you send $9.99, use the password below. It unlocks all three labs for 30 days on this phone or computer.</p>
+      <div data-stp-show-pass></div>
+      <p id="stp-unlock-status" class="stp-unlock-status" hidden></p>
+      <p id="stp-unlock-ok" class="stp-unlock-status" hidden></p>
       <p class="btns">
+        <button type="button" class="btn" data-stp-grant>Unlock 30 days on this device</button>
         <a class="btn ghost" href="osha/fall-protection.html">Free fall protection quiz</a>
       </p>
     </section>
@@ -29,6 +37,7 @@
   <script src="js/config.js"></script>
   <script src="js/i18n.js"></script>
   <script src="js/pay.js"></script>
+  <script src="js/unlock.js"></script>
   <script src="js/chrome.js"></script>
 </body>
 </html>

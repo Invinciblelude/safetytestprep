@@ -7,6 +7,7 @@ window.STP_SITE = {
 window.STP_PAY = {
   cashapp: "$safetytestprep",
   cashQr: "/img/qr-cashapp.png",
+  labPassword: "PREP999",
   crypto: [
     {
       label: "Bitcoin (BTC)",
